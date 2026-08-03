@@ -1,3 +1,15 @@
+You were just viewing the YAML file—the code you pasted is the YAML.
+
+On GitHub:
+
+Open the base44redflags repository.
+Click the .github folder.
+Click workflows.
+Open the file named something like base44redflags-build.yaml.
+Click the pencil icon to edit.
+
+Send me a screenshot once the file is open, and I’ll point to the exact spot.
+
 # To better understand this file read this:
 # https://docs.ionos.space/docs/github-actions-customization/
 
@@ -50,3 +62,141 @@ jobs:
           folder: ${{ env.DEPLOYMENT_FOLDER }}
           config-file: .deploy-now/base44redflags/config.yaml
           action: upload
+
+You have the correct YAML file open. Insert these two lines directly after node-version: 22:
+
+      - name: Install dependencies
+        run: npm install
+
+That section should look exactly like this:
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Node assets
+        env:
+          CI: true
+          SITE_URL: ${{ inputs.site-url }}
+        run: npm run build
+
+Then click Commit changes. Leave everything else untouched.
+
+# To better understand this file read this:
+# https://docs.ionos.space/docs/github-actions-customization/
+
+name: "Install dependencies"
+
+on:
+  workflow_call:
+    inputs:
+      site-url:
+        required: true
+        type: string
+      branch-id:
+        required: true
+        type: string
+
+env:
+  DEPLOYMENT_FOLDER: dist
+
+jobs:
+# Please do not rename this job
+  build-project:
+    name: build base44redflags
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        env:
+          CI: true
+          SITE_URL: ${{ inputs.site-url }}
+        run: npm run build
+
+# Please do not touch the following action
+      - name: Build Node assets
+        uses: ionos-deploy-now/artifact-action@v1
+        with:
+          api-key: ${{ secrets.IONOS_API_KEY }}
+          service-host: api-us.ionos.space
+          project-id: 0cf61437-5c67-41fd-985f-e9ffbc413610
+          branch-id: ${{ inputs.branch-id }}
+          version: ${{ github.sha }}
+          folder: ${{ env.DEPLOYMENT_FOLDER }}
+          config-file: .deploy-now/base44redflags/config.yaml
+          action: upload
+
+Stop—don’t commit that version. A few labels were accidentally replaced.
+
+Select all the text in the file, delete it, and paste this exact complete version:
+
+# To better understand this file read this:
+# https://docs.ionos.space/docs/github-actions-customization/
+
+name: "Deploy Now: Execute Build"
+
+on:
+  workflow_call:
+    inputs:
+      site-url:
+        required: true
+        type: string
+      branch-id:
+        required: true
+        type: string
+
+env:
+  DEPLOYMENT_FOLDER: dist
+
+jobs:
+# Please do not rename this job
+  build-project:
+    name: build base44redflags
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Node assets
+        env:
+          CI: true
+          SITE_URL: ${{ inputs.site-url }}
+        run: npm run build
+
+# Please do not touch the following action
+      - name: Store deployment content
+        uses: ionos-deploy-now/artifact-action@v1
+        with:
+          api-key: ${{ secrets.IONOS_API_KEY }}
+          service-host: api-us.ionos.space
+          project-id: 0cf61437-5c67-41fd-985f-e9ffbc413610
+          branch-id: ${{ inputs.branch-id }}
+          version: ${{ github.sha }}
+          folder: ${{ env.DEPLOYMENT_FOLDER }}
+          config-file: .deploy-now/base44redflags/config.yaml
+          action: upload
+
+Then click Commit changes.
