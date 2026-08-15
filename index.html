@@ -171,77 +171,57 @@ header{
 .hero-buttons{
     display:flex;
     justify-content:center;
-    gap:15px;
+    gap:18px;
     flex-wrap:wrap;
-}
-    <div class="countdown">
-
-    <div class="time-box">
-        <span id="days">00</span>
-        DAYS
-    </div>
-
-    <div class="time-box">
-        <span id="hours">00</span>
-        HOURS
-    </div>
-
-    <div class="time-box">
-        <span id="minutes">00</span>
-        MINUTES
-    </div>
-
-    <div class="time-box">
-        <span id="seconds">00</span>
-        SECONDS
-    </div>
-    .countdown{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    flex-wrap:wrap;
-    margin:40px 0;
-}
-
-.time-box{
-    min-width:100px;
-}
-
-.time-box span{
-    display:block;
-    font-size:3rem;
-    font-weight:700;
-    color:var(--gold);
-}
-
-</div>
-
-.btn-primary,
-.btn-secondary{
-    padding:16px 32px;
-    border-radius:999px;
-    font-weight:600;
-    transition:.35s;
+    margin-top:40px;
 }
 
 .btn-primary{
     background:linear-gradient(
         135deg,
-        var(--gold-light),
-        var(--gold)
+        #f4d29a,
+        #d4a056
     );
-    color:black;
+
+    color:#111;
+    font-weight:700;
+
+    padding:18px 42px;
+
+    border-radius:999px;
+
+    box-shadow:
+    0 10px 30px rgba(212,160,86,.35);
+
+    transition:.35s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:
+    0 18px 45px rgba(212,160,86,.45);
 }
 
 .btn-secondary{
-    border:1px solid rgba(255,255,255,.4);
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    color:white;
+
+    padding:18px 42px;
+
+    border-radius:999px;
+
+    transition:.35s;
 }
 
-.btn-primary:hover,
 .btn-secondary:hover{
+    background:rgba(255,255,255,.10);
     transform:translateY(-4px);
 }
-
 /* IMAGE BREAK */
 
 .hero-image-break{
