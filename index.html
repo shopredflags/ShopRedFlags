@@ -1,657 +1,143 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Red Flags & Receipts | She Raised Me Right</title>
-
-<meta name="description" content="A tribute to the women who raised us, guided us, warned us, and loved us through every season of life.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Red Flags & Receipts</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
-:root{
-    --gold:#d4a056;
-    --black:#050505;
-    --white:#ffffff;
+:root{--gold:#d4a056;--bg:#050505;--panel:#0b0b0b}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#000;color:#fff;font-family:Inter,sans-serif}
+a{text-decoration:none;color:inherit}
+header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(0,0,0,.55);backdrop-filter:blur(8px)}
+.nav{max-width:1400px;margin:auto;padding:20px 32px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:2rem}
+nav{display:flex;gap:28px}
+nav a:hover{color:var(--gold)}
+.hero{min-height:100vh;background:url('hero.png') center/cover no-repeat;position:relative;display:flex;align-items:center}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.3))}
+.hero-content{position:relative;z-index:2;max-width:700px;padding:140px 6%}
+.kicker{letter-spacing:3px;color:var(--gold);margin-bottom:20px}
+h1{font-family:"Cormorant Garamond",serif;font-size:7rem;line-height:.9;color:var(--gold)}
+.lead{font-size:1.4rem;margin:20px 0 30px;color:#ddd}
+.countdown{display:flex;gap:30px;margin:30px 0;flex-wrap:wrap}
+.box span{display:block;font-size:3rem;color:var(--gold)}
+.form{display:flex;gap:10px;flex-wrap:wrap}
+.form input{padding:16px;background:#111;border:1px solid rgba(212,160,86,.4);color:#fff}
+.btn{padding:16px 28px;background:var(--gold);color:#000;font-weight:700;border:none}
+section{padding:100px 6%}
+.dark{background:#050505}
+.grid{display:grid;grid-template-columns:1fr 2fr}
+.story-card{border:1px solid rgba(212,160,86,.25);padding:40px}
+.story-card h2,.title{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:3rem}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:40px 0}
+.feature{text-align:center}
+.collection{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{border:1px solid rgba(212,160,86,.25);min-height:280px;padding:30px;display:flex;flex-direction:column;justify-content:end;background:#111;transition:.3s}
+.card:hover{transform:translateY(-8px);border-color:var(--gold)}
+.quote{padding:120px 6%;text-align:center;background:#080808}
+.quote h2{font-family:"Cormorant Garamond",serif;font-size:4rem;color:var(--gold)}
+.foundation{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.panel{border:1px solid rgba(212,160,86,.25);padding:40px;background:var(--panel)}
+footer{padding:60px;text-align:center;border-top:1px solid #222}
+@media(max-width:900px){
+h1{font-size:4rem}
+.collection,.features,.foundation,.grid{grid-template-columns:1fr}
+nav{display:none}
 }
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#000;
-    color:#fff;
-    font-family:'Montserrat',sans-serif;
-    line-height:1.7;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-/* NAV */
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:999;
-    background:rgba(0,0,0,.65);
-    backdrop-filter:blur(10px);
-}
-
-.nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 0;
-}
-
-.logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:2rem;
-    color:var(--gold);
-    font-weight:600;
-}
-
-nav{
-    display:flex;
-    gap:30px;
-}
-
-nav a{
-    position:relative;
-    font-size:.95rem;
-}
-
-nav a:after{
-    content:'';
-    position:absolute;
-    bottom:-5px;
-    left:0;
-    width:0;
-    height:1px;
-    background:var(--gold);
-    transition:.3s;
-}
-
-nav a:hover{
-    color:var(--gold);
-}
-
-nav a:hover:after{
-    width:100%;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    position:relative;
-    display:flex;
-    align-items:center;
-
-    background-image:url('images/she-raised-me-right.jpg');
-    background-size:cover;
-    background-position:center center;
-    background-repeat:no-repeat;
-}
-
-.hero::before{
-    content:'';
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(
-        90deg,
-        rgba(0,0,0,.88) 0%,
-        rgba(0,0,0,.72) 40%,
-        rgba(0,0,0,.25) 100%
-    );
-}
-
-.hero-content{
-    position:relative;
-    z-index:10;
-    max-width:650px;
-}
-
-.launch{
-    color:var(--gold);
-    letter-spacing:3px;
-    font-size:.8rem;
-    margin-bottom:25px;
-}
-
-.hero h1{
-    font-family:'Cormorant Garamond',serif;
-    color:var(--gold);
-    font-size:7rem;
-    line-height:.9;
-    margin-bottom:25px;
-}
-
-.hero p{
-    font-size:1.15rem;
-    margin-bottom:35px;
-}
-
-.countdown-label{
-    color:var(--gold);
-    margin-bottom:15px;
-    letter-spacing:2px;
-}
-
-.countdown{
-    display:flex;
-    gap:25px;
-    margin-bottom:40px;
-}
-
-.time-box{
-    text-align:center;
-}
-
-.time-box span{
-    display:block;
-    font-size:2.8rem;
-    font-weight:600;
-    color:var(--gold);
-}
-
-.signup{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-.signup input{
-    flex:1;
-    min-width:260px;
-    padding:15px;
-    border:1px solid rgba(212,160,86,.4);
-    background:rgba(255,255,255,.08);
-    color:white;
-}
-
-.signup button{
-    padding:15px 25px;
-    border:none;
-    background:var(--gold);
-    color:black;
-    font-weight:600;
-    cursor:pointer;
-}
-
-/* SECTIONS */
-
-section{
-    padding:120px 0;
-}
-
-.section-title{
-    font-family:'Cormorant Garamond',serif;
-    font-size:4rem;
-    color:var(--gold);
-    margin-bottom:30px;
-}
-
-.story{
-    background:#080808;
-}
-
-.story p{
-    max-width:850px;
-    margin-bottom:20px;
-    font-size:1.1rem;
-}
-
-/* COLLECTION */
-
-.collection-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    margin-top:50px;
-}
-
-.collection-card{
-    padding:40px 30px;
-    border:1px solid rgba(212,160,86,.25);
-    transition:.3s;
-}
-
-.collection-card:hover{
-    transform:translateY(-8px);
-    border-color:var(--gold);
-}
-
-.collection-card h3{
-    color:var(--gold);
-    margin-bottom:15px;
-}
-
-/* LETTER */
-
-.letter{
-    background:#090909;
-}
-
-.letter-content{
-    max-width:850px;
-}
-
-.letter-content p{
-    margin-bottom:18px;
-}
-
-/* JOIN */
-
-.join{
-    text-align:center;
-}
-
-.join h2{
-    font-family:'Cormorant Garamond',serif;
-    color:var(--gold);
-    font-size:4rem;
-    margin-bottom:20px;
-}
-
-.join p{
-    max-width:700px;
-    margin:0 auto 40px;
-}
-
-.join-form{
-    max-width:600px;
-    margin:auto;
-}
-
-.join-form input{
-    width:100%;
-    padding:16px;
-    margin-bottom:15px;
-    background:#111;
-    border:1px solid rgba(212,160,86,.35);
-    color:white;
-}
-
-.join-form button{
-    width:100%;
-    padding:16px;
-    border:none;
-    background:var(--gold);
-    color:black;
-    font-weight:600;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:60px 20px;
-    border-top:1px solid rgba(212,160,86,.15);
-}
-
-footer p{
-    margin-top:15px;
-    opacity:.75;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-        background-position:65% center;
-    }
-
-    .hero h1{
-        font-size:4rem;
-    }
-
-    .countdown{
-        flex-wrap:wrap;
-    }
-
-    .section-title{
-        font-size:2.8rem;
-    }
-
-    .join h2{
-        font-size:2.8rem;
-    }
-
-}
-
 </style>
 </head>
-
 <body>
-
-<header>
-
-<div class="container nav">
-
-<div class="logo">
-RED FLAGS & RECEIPTS
-</div>
-
-<nav>
-<a href="#story">Our Story</a>
-<a href="#collection">The Collection</a>
-<a href="#letter">The Letter</a>
-<a href="#join">Join</a>
-</nav>
-
-</div>
-
-</header>
+<header><div class="nav"><div class="logo">RED FLAGS & RECEIPTS</div><nav>
+<a href="#story">Story</a><a href="#collection">Collection</a><a href="#foundation">Foundation</a><a href="#join">Join</a>
+</nav></div></header>
 
 <section class="hero">
-
-<div class="container">
-
 <div class="hero-content">
-
-<div class="launch">
-AUGUST 19, 2026 • 6:00 AM EST
-</div>
-
-<h1>
-She Raised<br>
-Me Right.
-</h1>
-
-<p>
-A tribute to the women whose wisdom became our blueprint.
-Every lesson. Every warning. Every sacrifice.
-Every receipt.
-</p>
-
-<div class="countdown-label">
-COLLECTION RELEASES IN
-</div>
-
+<div class="kicker">AUGUST 19, 2026 • 6:00 AM EASTERN</div>
+<h1>She Raised<br>Me Right.</h1>
+<p class="lead">A tribute to the women who taught us strength, intuition, grace, and resilience.</p>
 <div class="countdown">
-
-<div class="time-box">
-<span id="days">00</span>
-DAYS
+<div class="box"><span id="days">00</span>DAYS</div>
+<div class="box"><span id="hours">00</span>HOURS</div>
+<div class="box"><span id="minutes">00</span>MINUTES</div>
+<div class="box"><span id="seconds">00</span>SECONDS</div>
 </div>
-
-<div class="time-box">
-<span id="hours">00</span>
-HOURS
-</div>
-
-<div class="time-box">
-<span id="minutes">00</span>
-MINUTES
-</div>
-
-<div class="time-box">
-<span id="seconds">00</span>
-SECONDS
-</div>
-
-</div>
-
-<form
-class="signup"
-action="https://formspree.io/f/xdkekagr"
-method="POST">
-
-<input
-type="email"
-name="email"
-placeholder="Enter your email address"
-required>
-
-<input
-type="hidden"
-name="_subject"
-value="Launch List Signup">
-
-<button type="submit">
-JOIN THE LIST
-</button>
-
+<form class="form" action="https://formspree.io/f/xdkekagr" method="POST">
+<input type="email" name="email" placeholder="Email Address" required>
+<input type="tel" name="phone" placeholder="Phone Number">
+<button class="btn">NOTIFY ME</button>
 </form>
-
 </div>
-
-</div>
-
 </section>
 
-<section class="story" id="story">
-
-<div class="container">
-
-<h2 class="section-title">
-More Than A Collection
-</h2>
-
-<p>
-Before there were podcasts, there were mothers.
-Before there were influencers, there were grandmothers.
-Before there were life coaches, there were women whose wisdom shaped generations.
-</p>
-
-<p>
-The women who warned us before we could see the danger.
-The women who protected us when we didn't know we needed protection.
-The women who loved us enough to tell us the truth.
-</p>
-
-<p>
-Red Flags & Receipts is our tribute to those women.
-The ones who saw the red flags before we did.
-The ones who left us receipts when life finally proved them right.
-</p>
-
+<section id="story" class="dark">
+<div class="grid">
+<div class="story-card"><h2>Raised Right.</h2></div>
+<div>
+<h2 class="title">This isn't another clothing drop. It's a thank-you letter.</h2>
+<div class="features">
+<div class="feature">Every lesson.</div>
+<div class="feature">Every warning.</div>
+<div class="feature">Every hug.</div>
+<div class="feature">Every receipt.</div>
 </div>
-
+</div>
+</div>
 </section>
 
 <section id="collection">
-
-<div class="container">
-
-<h2 class="section-title">
-The First Drop
-</h2>
-
-<div class="collection-grid">
-
-<div class="collection-card">
-<h3>The Legacy Hoodie</h3>
-<p>
-A premium heavyweight hoodie inspired by the women who carried entire families through difficult seasons.
-</p>
+<h2 class="title">The Collection</h2>
+<div class="collection">
+<a class="card" href="#hoodies"><h3>LEGACY HOODIES</h3><p>Rooted in lessons.</p></a>
+<a class="card" href="#tees"><h3>STATEMENT TEES</h3><p>Say it without saying it.</p></a>
+<a class="card" href="#accessories"><h3>LUXURY ACCESSORIES</h3><p>Details that matter.</p></a>
+<a class="card" href="#limited"><h3>LIMITED PIECES</h3><p>Rare. Exclusive. Iconic.</p></a>
 </div>
-
-<div class="collection-card">
-<h3>She Raised Me Right Tee</h3>
-<p>
-The statement piece behind the campaign. A reminder that wisdom is inherited.
-</p>
-</div>
-
-<div class="collection-card">
-<h3>The Receipt Collection</h3>
-<p>
-Pieces inspired by those moments when experience quietly proves itself right.
-</p>
-</div>
-
-<div class="collection-card">
-<h3>Limited Edition Releases</h3>
-<p>
-Exclusive drops celebrating generational wisdom, resilience, and legacy.
-</p>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<section class="letter" id="letter">
-
-<div class="container">
-
-<div class="letter-content">
-
-<h2 class="section-title">
-A Letter To The Women Who Raised Us
-</h2>
-
-<p>
-Thank you for every lesson we didn't understand until later.
-</p>
-
-<p>
-Thank you for every warning that turned out to be right.
-</p>
-
-<p>
-Thank you for every sacrifice nobody saw.
-</p>
-
-<p>
-Thank you for every prayer, every difficult conversation, every act of strength, and every act of love.
-</p>
-
-<p>
-This collection exists because of you.
-</p>
-
-</div>
-
-</div>
-
+<section class="quote">
+<h2>“She didn't just raise me.<br>She built the blueprint.”</h2>
 </section>
 
-<section class="join" id="join">
+<section id="foundation" class="foundation">
+<div class="panel">
+<h2 class="title">Red Flags Foundation</h2>
+<p>A portion of every purchase supports mentorship, leadership and generational wisdom initiatives.</p>
+</div>
+<div class="panel">
+<h2 class="title">Luxury. Femininity. Power.</h2>
+<p>Streetwear with meaning. Built on legacy.</p>
+</div>
+</section>
 
-<div class="container">
+<section id="hoodies"><h2 class="title">Legacy Hoodies</h2></section>
+<section id="tees"><h2 class="title">Statement Tees</h2></section>
+<section id="accessories"><h2 class="title">Luxury Accessories</h2></section>
+<section id="limited"><h2 class="title">Limited Pieces</h2></section>
 
-<h2>
-Join The Founding List
-</h2>
-
-<p>
-Get early access, collection previews, launch announcements,
-and exclusive updates before the public release.
-</p>
-
-<form
-class="join-form"
-action="https://formspree.io/f/xdkekagr"
-method="POST">
-
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required>
-
-<input
-type="hidden"
-name="_subject"
-value="Founding List Signup">
-
-<button type="submit">
-JOIN THE FOUNDING LIST
-</button>
-
+<section id="join">
+<h2 class="title">Join The Movement</h2>
+<form class="form" action="https://formspree.io/f/xdkekagr" method="POST">
+<input type="text" name="name" placeholder="Your Name">
+<input type="email" name="email" placeholder="Email Address">
+<button class="btn">JOIN THE LIST</button>
 </form>
-
-</div>
-
 </section>
 
-<footer>
-
-<div class="logo">
-RED FLAGS & RECEIPTS
-</div>
-
-<p>
-A tribute to the women who raised us right.
-</p>
-
-<p>
-© 2026 Red Flags & Receipts. All Rights Reserved.
-</p>
-
-</footer>
+<footer>© 2026 Red Flags & Receipts</footer>
 
 <script>
-
-const launchDate =
-new Date("2026-08-19T06:00:00-04:00").getTime();
-
+const launchDate=new Date("2026-08-19T06:00:00-04:00").getTime();
 function updateCountdown(){
-
-const now = new Date().getTime();
-const distance = launchDate - now;
-
-const days = Math.floor(distance/(1000*60*60*24));
-const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-const seconds = Math.floor((distance%(1000*60))/1000);
-
-document.getElementById('days').innerText =
-String(days).padStart(2,'0');
-
-document.getElementById('hours').innerText =
-String(hours).padStart(2,'0');
-
-document.getElementById('minutes').innerText =
-String(minutes).padStart(2,'0');
-
-document.getElementById('seconds').innerText =
-String(seconds).padStart(2,'0');
-
+const now=new Date().getTime(),d=launchDate-now;
+document.getElementById('days').textContent=Math.max(0,Math.floor(d/86400000));
+document.getElementById('hours').textContent=Math.max(0,Math.floor((d%86400000)/3600000));
+document.getElementById('minutes').textContent=Math.max(0,Math.floor((d%3600000)/60000));
+document.getElementById('seconds').textContent=Math.max(0,Math.floor((d%60000)/1000));
 }
-
-updateCountdown();
-setInterval(updateCountdown,1000);
-
+updateCountdown();setInterval(updateCountdown,1000);
 </script>
-
-</body>
-</html>
-```
+</body></html>
