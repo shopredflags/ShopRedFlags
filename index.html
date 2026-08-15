@@ -676,29 +676,6 @@ JOIN THE LIST
 <footer>
 © 2026 Red Flags & Receipts. All Rights Reserved.
 </footer>
-    <script>
-
-const launchDate =
-new Date("2026-08-19T06:00:00-04:00").getTime();
-
-function updateCountdown(){
-
-    const now = new Date().getTime();
-    const distance = launchDate - now;
-
-    document.getElementById("days").textContent =
-    Math.max(0,Math.floor(distance/86400000));
-
-    document.getElementById("hours").textContent =
-    Math.max(0,Math.floor((distance%86400000)/3600000));
-
-    document.getElementById("minutes").textContent =
-    Math.max(0,Math.floor((distance%3600000)/60000));
-
-    document.getElementById("seconds").textContent =
-    Math.max(0,Math.floor((distance%60000)/1000));
-
-}
 
 
 </body>
