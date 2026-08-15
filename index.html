@@ -14,6 +14,17 @@
 
 <style>
 
+    .footer-secret a{
+    color:rgba(255,255,255,.25);
+    font-size:.8rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.footer-secret a:hover{
+    color:var(--gold);
+}
 :root{
     --gold:#d4a056;
     --gold-light:#f4d29a;
@@ -295,7 +306,33 @@ header{
 }
 
 /* STORY */
+</section> <!-- end hero -->
 
+<section class="legacy-section">
+
+    <div class="legacy-image">
+        <img src="hero2.jpg" alt="Mother and Daughter">
+    </div>
+
+    <div class="legacy-copy">
+
+        <span class="legacy-kicker">
+            THE STORY BEHIND THE COLLECTION
+        </span>
+
+        <h2>
+            She Didn't Just Raise Me.
+            <br>
+            She Built The Blueprint.
+        </h2>
+
+        <p>
+            This collection was created to honor the women whose wisdom became our foundation.
+        </p>
+
+    </div>
+
+</section>
 .story-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -704,17 +741,7 @@ JOIN THE LIST
     margin-top:30px;
 }
 
-.footer-secret a{
-    color:rgba(255,255,255,.25);
-    font-size:.8rem;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    transition:.3s;
-}
 
-.footer-secret a:hover{
-    color:var(--gold);
-}
 <footer>
     <div class="footer-secret">
     <a href="#" onclick="openLetter(); return false;">
@@ -733,7 +760,15 @@ JOIN THE LIST
     background-size:cover;
     background-position:center;
 }
-<script>
+
+    <footer>
+
+<a class="mom-link" onclick="openLetter()">
+For Mom
+</a>
+
+</footer>
+    <script>
 
 const launchDate =
 new Date("2026-08-19T06:00:00-04:00").getTime();
