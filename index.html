@@ -241,6 +241,16 @@ header{
     transform:translateY(-4px);
 }
 /* IMAGE BREAK */
+    .hero-image-break{
+    width:100%;
+    padding:80px 5%;
+}
+
+.hero-image-break img{
+    width:100%;
+    display:block;
+    border-radius:30px;
+}
 <section class="legacy-section">
 
     <div class="legacy-image">
@@ -690,8 +700,27 @@ JOIN THE LIST
 </div>
 
 </section>
+.footer-secret{
+    margin-top:30px;
+}
 
+.footer-secret a{
+    color:rgba(255,255,255,.25);
+    font-size:.8rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.footer-secret a:hover{
+    color:var(--gold);
+}
 <footer>
+    <div class="footer-secret">
+    <a href="#" onclick="openLetter(); return false;">
+        For Mom
+    </a>
+</div>
 © 2026 Red Flags & Receipts. All Rights Reserved.
 </footer>
 
