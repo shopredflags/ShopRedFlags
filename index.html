@@ -195,6 +195,24 @@ header{
         <span id="seconds">00</span>
         SECONDS
     </div>
+    .countdown{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin:40px 0;
+}
+
+.time-box{
+    min-width:100px;
+}
+
+.time-box span{
+    display:block;
+    font-size:3rem;
+    font-weight:700;
+    color:var(--gold);
+}
 
 </div>
 
@@ -658,6 +676,30 @@ JOIN THE LIST
 <footer>
 © 2026 Red Flags & Receipts. All Rights Reserved.
 </footer>
+    <script>
+
+const launchDate =
+new Date("2026-08-19T06:00:00-04:00").getTime();
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+    const distance = launchDate - now;
+
+    document.getElementById("days").textContent =
+    Math.max(0,Math.floor(distance/86400000));
+
+    document.getElementById("hours").textContent =
+    Math.max(0,Math.floor((distance%86400000)/3600000));
+
+    document.getElementById("minutes").textContent =
+    Math.max(0,Math.floor((distance%3600000)/60000));
+
+    document.getElementById("seconds").textContent =
+    Math.max(0,Math.floor((distance%60000)/1000));
+
+}
+
 
 </body>
 </html>
