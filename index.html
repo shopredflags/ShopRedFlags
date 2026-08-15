@@ -7,7 +7,10 @@
 
 <title>Red Flags & Receipts | She Raised Me Right</title>
 
-<meta name="description" content="A tribute to the women who taught us strength, wisdom, and resilience.">
+<meta name="description" content="A tribute to the women who raised us, guided us, warned us, and loved us through every season of life.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -33,28 +36,29 @@ body{
     background:#000;
     color:#fff;
     font-family:'Montserrat',sans-serif;
+    line-height:1.7;
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
 
 .container{
     width:90%;
-    max-width:1400px;
+    max-width:1200px;
     margin:auto;
 }
 
-/* NAVIGATION */
+/* NAV */
 
 header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    z-index:1000;
-    background:rgba(0,0,0,.55);
+    z-index:999;
+    background:rgba(0,0,0,.65);
     backdrop-filter:blur(10px);
 }
 
@@ -62,28 +66,30 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:25px 0;
+    padding:20px 0;
 }
 
 .logo{
     font-family:'Cormorant Garamond',serif;
     font-size:2rem;
     color:var(--gold);
+    font-weight:600;
 }
 
 nav{
     display:flex;
-    gap:35px;
+    gap:30px;
 }
 
 nav a{
     position:relative;
+    font-size:.95rem;
 }
 
-nav a::after{
+nav a:after{
     content:'';
     position:absolute;
-    bottom:-6px;
+    bottom:-5px;
     left:0;
     width:0;
     height:1px;
@@ -95,19 +101,19 @@ nav a:hover{
     color:var(--gold);
 }
 
-nav a:hover::after{
+nav a:hover:after{
     width:100%;
 }
 
 /* HERO */
 
 .hero{
-    position:relative;
     min-height:100vh;
+    position:relative;
     display:flex;
     align-items:center;
 
-    background-image:url("images/she-raised-me-right.jpg");
+    background-image:url('images/she-raised-me-right.jpg');
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
@@ -122,50 +128,47 @@ nav a:hover::after{
     linear-gradient(
         90deg,
         rgba(0,0,0,.88) 0%,
-        rgba(0,0,0,.70) 35%,
+        rgba(0,0,0,.72) 40%,
         rgba(0,0,0,.25) 100%
     );
 }
 
 .hero-content{
     position:relative;
-    z-index:5;
+    z-index:10;
     max-width:650px;
 }
 
-.launch-date{
+.launch{
     color:var(--gold);
     letter-spacing:3px;
+    font-size:.8rem;
     margin-bottom:25px;
-    font-size:.85rem;
 }
 
 .hero h1{
     font-family:'Cormorant Garamond',serif;
-    font-size:6.5rem;
-    line-height:.9;
     color:var(--gold);
+    font-size:7rem;
+    line-height:.9;
     margin-bottom:25px;
 }
 
 .hero p{
     font-size:1.15rem;
-    line-height:1.8;
-    margin-bottom:40px;
+    margin-bottom:35px;
 }
 
-/* COUNTDOWN */
-
-.countdown-title{
+.countdown-label{
     color:var(--gold);
-    margin-bottom:20px;
+    margin-bottom:15px;
     letter-spacing:2px;
 }
 
 .countdown{
     display:flex;
     gap:25px;
-    margin-bottom:45px;
+    margin-bottom:40px;
 }
 
 .time-box{
@@ -174,103 +177,149 @@ nav a:hover::after{
 
 .time-box span{
     display:block;
-    font-size:3rem;
+    font-size:2.8rem;
     font-weight:600;
     color:var(--gold);
 }
 
-/* FORM */
-
 .signup{
-    display:grid;
-    gap:15px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
 .signup input{
-    width:100%;
+    flex:1;
+    min-width:260px;
     padding:15px;
+    border:1px solid rgba(212,160,86,.4);
     background:rgba(255,255,255,.08);
-    border:1px solid rgba(212,160,86,.35);
     color:white;
 }
 
-.signup input:focus{
-    outline:none;
-    border-color:var(--gold);
-}
-
-.btn{
+.signup button{
+    padding:15px 25px;
     border:none;
     background:var(--gold);
     color:black;
     font-weight:600;
-    padding:16px;
     cursor:pointer;
 }
 
-.btn:hover{
-    transform:translateY(-3px);
-}
+/* SECTIONS */
 
-/* STORY SECTION */
-
-.story{
+section{
     padding:120px 0;
-    background:#090909;
 }
 
 .section-title{
     font-family:'Cormorant Garamond',serif;
     font-size:4rem;
     color:var(--gold);
-    margin-bottom:25px;
+    margin-bottom:30px;
+}
+
+.story{
+    background:#080808;
 }
 
 .story p{
-    max-width:800px;
-    line-height:2;
+    max-width:850px;
+    margin-bottom:20px;
     font-size:1.1rem;
 }
 
-/* COLLECTION PREVIEW */
+/* COLLECTION */
 
-.collection{
-    padding:120px 0;
-}
-
-.cards{
+.collection-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
     margin-top:50px;
 }
 
-.card{
-    border:1px solid rgba(212,160,86,.2);
+.collection-card{
     padding:40px 30px;
+    border:1px solid rgba(212,160,86,.25);
+    transition:.3s;
 }
 
-.card:hover{
+.collection-card:hover{
     transform:translateY(-8px);
     border-color:var(--gold);
 }
 
-.card h3{
+.collection-card h3{
     color:var(--gold);
     margin-bottom:15px;
+}
+
+/* LETTER */
+
+.letter{
+    background:#090909;
+}
+
+.letter-content{
+    max-width:850px;
+}
+
+.letter-content p{
+    margin-bottom:18px;
+}
+
+/* JOIN */
+
+.join{
+    text-align:center;
+}
+
+.join h2{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--gold);
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.join p{
+    max-width:700px;
+    margin:0 auto 40px;
+}
+
+.join-form{
+    max-width:600px;
+    margin:auto;
+}
+
+.join-form input{
+    width:100%;
+    padding:16px;
+    margin-bottom:15px;
+    background:#111;
+    border:1px solid rgba(212,160,86,.35);
+    color:white;
+}
+
+.join-form button{
+    width:100%;
+    padding:16px;
+    border:none;
+    background:var(--gold);
+    color:black;
+    font-weight:600;
 }
 
 /* FOOTER */
 
 footer{
-    border-top:1px solid rgba(212,160,86,.15);
     text-align:center;
     padding:60px 20px;
+    border-top:1px solid rgba(212,160,86,.15);
 }
 
 footer p{
-    margin-top:20px;
-    opacity:.8;
+    margin-top:15px;
+    opacity:.75;
 }
 
 /* MOBILE */
@@ -286,18 +335,18 @@ footer p{
     }
 
     .hero h1{
-        font-size:3.5rem;
+        font-size:4rem;
     }
 
     .countdown{
         flex-wrap:wrap;
     }
 
-    .time-box span{
-        font-size:2rem;
+    .section-title{
+        font-size:2.8rem;
     }
 
-    .section-title{
+    .join h2{
         font-size:2.8rem;
     }
 
@@ -305,173 +354,267 @@ footer p{
 
 </style>
 </head>
+
 <body>
 
 <header>
-    <div class="container nav">
 
-        <a href="index.html" class="logo">
-            RED FLAGS & RECEIPTS
-        </a>
+<div class="container nav">
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="collection.html">Collection</a>
-            <a href="about.html">About</a>
-            <a href="foundation.html">Foundation</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+<div class="logo">
+RED FLAGS & RECEIPTS
+</div>
 
-    </div>
+<nav>
+<a href="#story">Our Story</a>
+<a href="#collection">The Collection</a>
+<a href="#letter">The Letter</a>
+<a href="#join">Join</a>
+</nav>
+
+</div>
+
 </header>
 
 <section class="hero">
 
-    <div class="container">
+<div class="container">
 
-        <div class="hero-content">
+<div class="hero-content">
 
-            <div class="launch-date">
-                AUGUST 19, 2026 • 6:00 AM EST
-            </div>
+<div class="launch">
+AUGUST 19, 2026 • 6:00 AM EST
+</div>
 
-            <h1>
-                She Raised<br>
-                Me Right.
-            </h1>
+<h1>
+She Raised<br>
+Me Right.
+</h1>
 
-            <p>
-                A tribute to the women whose wisdom became our blueprint.
-                Every lesson. Every warning. Every sacrifice.
-                Every receipt.
-            </p>
+<p>
+A tribute to the women whose wisdom became our blueprint.
+Every lesson. Every warning. Every sacrifice.
+Every receipt.
+</p>
 
-            <div class="countdown-title">
-                COLLECTION RELEASES IN
-            </div>
+<div class="countdown-label">
+COLLECTION RELEASES IN
+</div>
 
-            <div class="countdown">
+<div class="countdown">
 
-                <div class="time-box">
-                    <span id="days">00</span>
-                    DAYS
-                </div>
+<div class="time-box">
+<span id="days">00</span>
+DAYS
+</div>
 
-                <div class="time-box">
-                    <span id="hours">00</span>
-                    HOURS
-                </div>
+<div class="time-box">
+<span id="hours">00</span>
+HOURS
+</div>
 
-                <div class="time-box">
-                    <span id="minutes">00</span>
-                    MINUTES
-                </div>
+<div class="time-box">
+<span id="minutes">00</span>
+MINUTES
+</div>
 
-                <div class="time-box">
-                    <span id="seconds">00</span>
-                    SECONDS
-                </div>
+<div class="time-box">
+<span id="seconds">00</span>
+SECONDS
+</div>
 
-            </div>
+</div>
 
-            <form
-                class="signup"
-                action="https://formspree.io/f/xdkekagr"
-                method="POST">
+<form
+class="signup"
+action="https://formspree.io/f/xdkekagr"
+method="POST">
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    required>
+<input
+type="email"
+name="email"
+placeholder="Enter your email address"
+required>
 
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="Launch List Signup">
+<input
+type="hidden"
+name="_subject"
+value="Launch List Signup">
 
-                <button
-                    type="submit"
-                    class="btn">
-                    JOIN THE LAUNCH LIST
-                </button>
+<button type="submit">
+JOIN THE LIST
+</button>
 
-            </form>
+</form>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
-<section class="story">
+<section class="story" id="story">
 
-    <div class="container">
+<div class="container">
 
-        <h2 class="section-title">
-            Our Story
-        </h2>
+<h2 class="section-title">
+More Than A Collection
+</h2>
 
-        <p>
-            Red Flags & Receipts was created to honor the women who taught
-            us how to move through life with strength, intuition, grace,
-            and resilience. Before there were influencers, there were
-            mothers. Before there were life coaches, there were
-            grandmothers. Before there were podcasts, there were kitchen
-            table conversations. This collection is our tribute to them.
-        </p>
+<p>
+Before there were podcasts, there were mothers.
+Before there were influencers, there were grandmothers.
+Before there were life coaches, there were women whose wisdom shaped generations.
+</p>
 
-    </div>
+<p>
+The women who warned us before we could see the danger.
+The women who protected us when we didn't know we needed protection.
+The women who loved us enough to tell us the truth.
+</p>
+
+<p>
+Red Flags & Receipts is our tribute to those women.
+The ones who saw the red flags before we did.
+The ones who left us receipts when life finally proved them right.
+</p>
+
+</div>
 
 </section>
 
-<section class="collection">
+<section id="collection">
 
-    <div class="container">
+<div class="container">
 
-        <h2 class="section-title">
-            Coming Soon
-        </h2>
+<h2 class="section-title">
+The First Drop
+</h2>
 
-        <div class="cards">
+<div class="collection-grid">
 
-            <a href="collection.html" class="card">
-                <h3>The Legacy Hoodie</h3>
-                <p>Inspired by the women who taught us resilience.</p>
-            </a>
+<div class="collection-card">
+<h3>The Legacy Hoodie</h3>
+<p>
+A premium heavyweight hoodie inspired by the women who carried entire families through difficult seasons.
+</p>
+</div>
 
-            <a href="collection.html" class="card">
-                <h3>Statement Tees</h3>
-                <p>Lessons worth wearing.</p>
-            </a>
+<div class="collection-card">
+<h3>She Raised Me Right Tee</h3>
+<p>
+The statement piece behind the campaign. A reminder that wisdom is inherited.
+</p>
+</div>
 
-            <a href="collection.html" class="card">
-                <h3>Luxury Accessories</h3>
-                <p>Small details. Lasting impact.</p>
-            </a>
+<div class="collection-card">
+<h3>The Receipt Collection</h3>
+<p>
+Pieces inspired by those moments when experience quietly proves itself right.
+</p>
+</div>
 
-            <a href="collection.html" class="card">
-                <h3>Limited Pieces</h3>
-                <p>Rare. Exclusive. Iconic.</p>
-            </a>
+<div class="collection-card">
+<h3>Limited Edition Releases</h3>
+<p>
+Exclusive drops celebrating generational wisdom, resilience, and legacy.
+</p>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
+
+</section>
+
+<section class="letter" id="letter">
+
+<div class="container">
+
+<div class="letter-content">
+
+<h2 class="section-title">
+A Letter To The Women Who Raised Us
+</h2>
+
+<p>
+Thank you for every lesson we didn't understand until later.
+</p>
+
+<p>
+Thank you for every warning that turned out to be right.
+</p>
+
+<p>
+Thank you for every sacrifice nobody saw.
+</p>
+
+<p>
+Thank you for every prayer, every difficult conversation, every act of strength, and every act of love.
+</p>
+
+<p>
+This collection exists because of you.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="join" id="join">
+
+<div class="container">
+
+<h2>
+Join The Founding List
+</h2>
+
+<p>
+Get early access, collection previews, launch announcements,
+and exclusive updates before the public release.
+</p>
+
+<form
+class="join-form"
+action="https://formspree.io/f/xdkekagr"
+method="POST">
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
+
+<input
+type="hidden"
+name="_subject"
+value="Founding List Signup">
+
+<button type="submit">
+JOIN THE FOUNDING LIST
+</button>
+
+</form>
+
+</div>
 
 </section>
 
 <footer>
 
-    <h3>DON'T MISS THE DROP</h3>
+<div class="logo">
+RED FLAGS & RECEIPTS
+</div>
 
-    <p>
-        Join the launch list for early access and exclusive previews.
-    </p>
+<p>
+A tribute to the women who raised us right.
+</p>
 
-    <p>
-        © 2026 Red Flags & Receipts
-    </p>
+<p>
+© 2026 Red Flags & Receipts. All Rights Reserved.
+</p>
 
 </footer>
 
@@ -482,43 +625,29 @@ new Date("2026-08-19T06:00:00-04:00").getTime();
 
 function updateCountdown(){
 
-    const now = new Date().getTime();
+const now = new Date().getTime();
+const distance = launchDate - now;
 
-    const distance = launchDate - now;
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
 
-    const days =
-    Math.floor(distance / (1000*60*60*24));
+document.getElementById('days').innerText =
+String(days).padStart(2,'0');
 
-    const hours =
-    Math.floor(
-    (distance%(1000*60*60*24))
-    /(1000*60*60));
+document.getElementById('hours').innerText =
+String(hours).padStart(2,'0');
 
-    const minutes =
-    Math.floor(
-    (distance%(1000*60*60))
-    /(1000*60));
+document.getElementById('minutes').innerText =
+String(minutes).padStart(2,'0');
 
-    const seconds =
-    Math.floor(
-    (distance%(1000*60))
-    /1000);
+document.getElementById('seconds').innerText =
+String(seconds).padStart(2,'0');
 
-    document.getElementById('days').textContent =
-    String(days).padStart(2,'0');
-
-    document.getElementById('hours').textContent =
-    String(hours).padStart(2,'0');
-
-    document.getElementById('minutes').textContent =
-    String(minutes).padStart(2,'0');
-
-    document.getElementById('seconds').textContent =
-    String(seconds).padStart(2,'0');
 }
 
 updateCountdown();
-
 setInterval(updateCountdown,1000);
 
 </script>
