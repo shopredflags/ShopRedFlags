@@ -1401,12 +1401,12 @@ Luxury apparel and jewelry inspired by the women who built us.
 
 <div class="product-card reveal">
 <div class="product-image">
-<img src="images/rose-front.jpg" class="front">
-<img src="images/rose-back.jpg" class="back">
+<img src="images/wineglass-front.PNG" class="front">
+<img src="images/wineglass-back.PMG" class="back">
 </div>
 <div class="product-info">
-<h3>Rose Crewneck</h3>
-<p>Strength wrapped in softness.</p>
+<h3>Rose all day with these wineglasses.</h3>
+<p>Cheers to mama</p>
 </div>
 </div>
 
@@ -1497,32 +1497,8 @@ JOIN THE LIST
 © 2026 Red Flags & Receipts. All Rights Reserved.
 </footer>
 
-<script>
 
-const launchDate =
-new Date("2026-08-19T06:00:00-04:00").getTime();
 
-function updateCountdown(){
-
-const now = new Date().getTime();
-const distance = launchDate - now;
-
-document.getElementById("days").textContent =
-Math.max(0,Math.floor(distance/86400000));
-
-document.getElementById("hours").textContent =
-Math.max(0,Math.floor((distance%86400000)/3600000));
-
-document.getElementById("minutes").textContent =
-Math.max(0,Math.floor((distance%3600000)/60000));
-
-document.getElementById("seconds").textContent =
-Math.max(0,Math.floor((distance%60000)/1000));
-
-}
-
-updateCountdown();
-setInterval(updateCountdown,1000);
 
 const observer =
 new IntersectionObserver(entries=>{
