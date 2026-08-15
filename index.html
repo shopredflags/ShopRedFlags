@@ -175,7 +175,25 @@ header{
     flex-wrap:wrap;
     margin-top:40px;
 }
+.hero-buttons{
+    margin-top:55px;
+}
 
+.btn-primary,
+.btn-secondary{
+
+    min-width:240px;
+
+    padding:20px 44px;
+
+    font-size:.95rem;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+
+    font-weight:600;
+}
 .btn-primary{
     background:linear-gradient(
         135deg,
@@ -223,15 +241,31 @@ header{
     transform:translateY(-4px);
 }
 /* IMAGE BREAK */
+<section class="legacy-section">
 
-.hero-image-break{
-    padding:0;
-}
+    <div class="legacy-image">
+        <img src="hero2.jpg" alt="Mother and Daughter">
+    </div>
 
-.hero-image-break img{
-    width:100%;
-    display:block;
-}
+    <div class="legacy-copy">
+
+        <span class="legacy-kicker">
+            THE STORY BEHIND THE COLLECTION
+        </span>
+
+        <h2>
+            She Didn't Just Raise Me.
+            <br>
+            She Built The Blueprint.
+        </h2>
+
+        <p>
+            This collection was created to honor the women whose wisdom became our foundation.
+        </p>
+
+    </div>
+
+</section>
 
 /* SECTION TITLES */
 
@@ -300,8 +334,12 @@ header{
 }
 
 .product-image{
-    position:relative;
-    height:520px;
+    height:420px;
+    padding:25px;
+}
+ .product-image img{
+    object-fit:contain;
+}  
     overflow:hidden;
 }
 
@@ -657,7 +695,35 @@ JOIN THE LIST
 © 2026 Red Flags & Receipts. All Rights Reserved.
 </footer>
 
+<script>
 
+const launchDate =
+new Date("2026-08-19T06:00:00-04:00").getTime();
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+
+    const distance =
+    launchDate - now;
+
+    document.getElementById("days").textContent =
+    Math.floor(distance / 86400000);
+
+    document.getElementById("hours").textContent =
+    Math.floor((distance % 86400000) / 3600000);
+
+    document.getElementById("minutes").textContent =
+    Math.floor((distance % 3600000) / 60000);
+
+    document.getElementById("seconds").textContent =
+    Math.floor((distance % 60000) / 1000);
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+</script>
 </body>
 </html>
 ```
