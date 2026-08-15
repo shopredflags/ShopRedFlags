@@ -1,415 +1,762 @@
+# Complete Luxury Landing Page (index.html)
+
+Replace your existing file with this structure and then drop in your images/video assets.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Red Flags & Receipts</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Red Flags & Receipts | She Raised Me Right</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--gold:#d4a056;--bg:#050505;--panel:#0b0b0b}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:#000;color:#fff;font-family:Inter,sans-serif}
-a{text-decoration:none;color:inherit}
-header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(0,0,0,.55);backdrop-filter:blur(8px)}
-.nav{max-width:1400px;margin:auto;padding:20px 32px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:2rem}
-nav{display:flex;gap:28px}
-nav a:hover{color:var(--gold)}
-.hero{min-height:100vh;background:url('hero.png') center/cover no-repeat;position:relative;display:flex;align-items:center}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.3))}
-.hero-content{position:relative;z-index:2;max-width:700px;padding:140px 6%}
-.kicker{letter-spacing:3px;color:var(--gold);margin-bottom:20px}
-h1{font-family:"Cormorant Garamond",serif;font-size:7rem;line-height:.9;color:var(--gold)}
-.lead{font-size:1.4rem;margin:20px 0 30px;color:#ddd}
-.countdown{display:flex;gap:30px;margin:30px 0;flex-wrap:wrap}
-.box span{display:block;font-size:3rem;color:var(--gold)}
-.form{display:flex;gap:10px;flex-wrap:wrap}
-.form input{padding:16px;background:#111;border:1px solid rgba(212,160,86,.4);color:#fff}
-.btn{padding:16px 28px;background:var(--gold);color:#000;font-weight:700;border:none}
-section{padding:100px 6%}
-.dark{background:#050505}
-.grid{display:grid;grid-template-columns:1fr 2fr}
-.story-card{border:1px solid rgba(212,160,86,.25);padding:40px}
-.story-card h2,.title{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:3rem}
-.features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:40px 0}
-.feature{text-align:center}
-.collection{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{border:1px solid rgba(212,160,86,.25);min-height:280px;padding:30px;display:flex;flex-direction:column;justify-content:end;background:#111;transition:.3s}
-.card:hover{transform:translateY(-8px);border-color:var(--gold)}
-.quote{padding:120px 6%;text-align:center;background:#080808}
-.quote h2{font-family:"Cormorant Garamond",serif;font-size:4rem;color:var(--gold)}
-.foundation{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.panel{border:1px solid rgba(212,160,86,.25);padding:40px;background:var(--panel)}
-footer{padding:60px;text-align:center;border-top:1px solid #222}
-@media(max-width:900px){
-h1{font-size:4rem}
-.collection,.features,.foundation,.grid{grid-template-columns:1fr}
-nav{display:none}
+
+:root{
+    --gold:#d4a056;
+    --gold-light:#f4d29a;
+    --gold-dark:#9a6a2b;
+
+    --bg:#050505;
+    --panel:#0d0d0d;
+
+    --white:#ffffff;
+    --muted:#b8b8b8;
+
+    --border:1px solid rgba(212,160,86,.18);
+
+    --shadow:
+        0 25px 80px rgba(0,0,0,.55);
+
+    --radius:24px;
 }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:"Inter",sans-serif;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.035;
+    background-image:
+        url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    z-index:9999;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+section{
+    padding:120px 7%;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+header{
+    position:fixed;
+    top:20px;
+    left:20px;
+    right:20px;
+    z-index:1000;
+
+    background:rgba(8,8,8,.55);
+    backdrop-filter:blur(20px);
+
+    border:var(--border);
+    border-radius:999px;
+}
+
+.nav{
+    max-width:1500px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 35px;
+}
+
+.logo{
+    font-family:"Cormorant Garamond",serif;
+    color:var(--gold);
+    font-size:2rem;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+}
+
+.nav-links a{
+    color:#ddd;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.hero video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.45)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:760px;
+    padding:0 7%;
+}
+
+.kicker{
+    color:var(--gold);
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:7rem;
+    line-height:.88;
+    color:var(--gold-light);
+}
+
+.hero p{
+    font-size:1.3rem;
+    color:#ddd;
+    max-width:650px;
+    margin:30px 0;
+}
+
+.countdown{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+    margin:40px 0;
+}
+
+.time-box{
+    min-width:110px;
+}
+
+.time-box span{
+    display:block;
+    font-size:3rem;
+    font-weight:700;
+    color:var(--gold);
+}
+
+.form{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.form input{
+    background:#111;
+    border:var(--border);
+    color:white;
+    padding:18px;
+    min-width:260px;
+}
+
+.btn{
+    border:none;
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
+
+    color:black;
+    font-weight:700;
+
+    padding:18px 34px;
+    transition:.35s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 45px rgba(212,160,86,.35);
+}
+
+.section-title{
+    text-align:center;
+    font-family:"Cormorant Garamond",serif;
+    font-size:4.5rem;
+    color:var(--gold);
+}
+
+.section-subtitle{
+    text-align:center;
+    color:var(--muted);
+    max-width:700px;
+    margin:20px auto 70px;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.story-card{
+    padding:60px;
+    background:var(--panel);
+    border:var(--border);
+    border-radius:var(--radius);
+}
+
+.story-card h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:3rem;
+    color:var(--gold);
+    margin-bottom:20px;
+}
+
+.story-card p{
+    color:#cfcfcf;
+    line-height:1.9;
+}
+
+.collection-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+}
+
+.product-card{
+    border:var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:#0a0a0a;
+    transition:.5s;
+    box-shadow:var(--shadow);
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+    border-color:var(--gold);
+}
+
+.product-image{
+    position:relative;
+    height:520px;
+    overflow:hidden;
+}
+
+.product-image img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+}
+
+.product-image .back{
+    opacity:0;
+}
+
+.product-card:hover .front{
+    opacity:0;
+}
+
+.product-card:hover .back{
+    opacity:1;
+}
+
+.product-info{
+    padding:25px;
+}
+
+.product-info h3{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+.product-info p{
+    color:#cfcfcf;
+}
+
+.quote{
+    text-align:center;
+    padding:180px 10%;
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(212,160,86,.10),
+        transparent 70%
+    );
+}
+
+.quote h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:5rem;
+    line-height:1.1;
+    color:var(--gold-light);
+}
+
+.foundation-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.panel{
+    background:var(--panel);
+    border:var(--border);
+    border-radius:var(--radius);
+    padding:50px;
+}
+
+.panel h3{
+    color:var(--gold);
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.panel p{
+    color:#d5d5d5;
+    line-height:1.8;
+}
+
+.join{
+    text-align:center;
+}
+
+footer{
+    padding:80px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#888;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:none;
+}
+
+@media(max-width:1000px){
+
+    .hero h1{
+        font-size:4.5rem;
+    }
+
+    .story-grid,
+    .foundation-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    .section-title{
+        font-size:3rem;
+    }
+
+    .quote h2{
+        font-size:2.8rem;
+    }
+
+    .product-image{
+        height:420px;
+    }
+
+}
+
 </style>
 </head>
+
 <body>
-<header><div class="nav"><div class="logo">RED FLAGS & RECEIPTS</div><nav>
-<a href="#story">Story</a><a href="#collection">Collection</a><a href="#foundation">Foundation</a><a href="#join">Join</a>
-</nav></div></header>
+
+<header>
+<div class="nav">
+
+<div class="logo">
+RED FLAGS & RECEIPTS
+</div>
+
+<nav class="nav-links">
+<a href="#story">Story</a>
+<a href="#collection">Collection</a>
+<a href="#foundation">Foundation</a>
+<a href="#join">Join</a>
+</nav>
+
+</div>
+</header>
 
 <section class="hero">
+
+<video autoplay muted loop playsinline>
+<source src="hero-video.mp4" type="video/mp4">
+</video>
+
 <div class="hero-content">
-<div class="kicker">AUGUST 19, 2026 • 6:00 AM EASTERN</div>
-<h1>She Raised<br>Me Right.</h1>
-<p class="lead">A tribute to the women who taught us strength, intuition, grace, and resilience.</p>
+
+<div class="kicker">
+AUGUST 19, 2026 • 6:00 AM EASTERN
+</div>
+
+<h1>
+She Raised<br>
+Me Right.
+</h1>
+
+<p>
+A tribute to the women who taught us strength,
+intuition, grace, resilience, and legacy.
+</p>
+
 <div class="countdown">
-<div class="box"><span id="days">00</span>DAYS</div>
-<div class="box"><span id="hours">00</span>HOURS</div>
-<div class="box"><span id="minutes">00</span>MINUTES</div>
-<div class="box"><span id="seconds">00</span>SECONDS</div>
+
+<div class="time-box">
+<span id="days">00</span>
+DAYS
 </div>
-<form class="form" action="https://formspree.io/f/xdkekagr" method="POST">
-<input type="email" name="email" placeholder="Email Address" required>
-<input type="tel" name="phone" placeholder="Phone Number">
-<button class="btn">NOTIFY ME</button>
+
+<div class="time-box">
+<span id="hours">00</span>
+HOURS
+</div>
+
+<div class="time-box">
+<span id="minutes">00</span>
+MINUTES
+</div>
+
+<div class="time-box">
+<span id="seconds">00</span>
+SECONDS
+</div>
+
+</div>
+
+<form class="form"
+action="https://formspree.io/f/xdkekagr"
+method="POST">
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
+
+<button class="btn">
+NOTIFY ME
+</button>
+
 </form>
+
 </div>
 </section>
 
-<section id="story" class="dark">
-<div class="grid">
-<div class="story-card"><h2>Raised Right.</h2></div>
-<div>
-<h2 class="title">This isn't another clothing drop. It's a thank-you letter.</h2>
-<div class="features">
-<div class="feature">Every lesson.</div>
-<div class="feature">Every warning.</div>
-<div class="feature">Every hug.</div>
-<div class="feature">Every receipt.</div>
+<section id="story">
+
+<div class="container">
+
+<div class="story-grid">
+
+<div class="story-card reveal">
+<h2>Raised Right.</h2>
+
+<p>
+This is more than a collection.
+It's a thank-you letter to the women
+whose wisdom became our foundation.
+Every lesson. Every warning.
+Every hug. Every receipt.
+</p>
 </div>
+
+<div class="story-card reveal">
+<h2>Built on Legacy.</h2>
+
+<p>
+Luxury streetwear inspired by motherhood,
+strength, femininity, and generational wisdom.
+Designed to be worn proudly and passed forward.
+</p>
 </div>
+
 </div>
+
+</div>
+
 </section>
 
-<section id="collection" class="collection-section">
+<section id="collection">
 
-    <h2 class="section-title">The Collection</h2>
-    <p class="section-subtitle">
-        Luxury streetwear inspired by the women who built us.
-    </p>
+<div class="container">
 
-    <div class="collection-grid">
+<h2 class="section-title reveal">
+The Collection
+</h2>
 
-        <!-- CREWNECK -->
+<p class="section-subtitle reveal">
+Luxury apparel and jewelry inspired by the women who built us.
+</p>
 
-        <a href="#crewneck" class="product-card">
-            <div class="product-image">
+<div class="collection-grid">
 
-                <img src="images/crewneck-front.jpg"
-                     alt="Mama Crewneck Front"
-                     class="front">
+<div class="product-card reveal">
+<div class="product-image">
+<img src="images/crewneck-front.jpg" class="front">
+<img src="images/crewneck-back.jpg" class="back">
+</div>
+<div class="product-info">
+<h3>Legacy Crewneck</h3>
+<p>Built from lessons. Worn with pride.</p>
+</div>
+</div>
 
-                <img src="images/crewneck-back.jpg"
-                     alt="Mama Crewneck Back"
-                     class="back">
+<div class="product-card reveal">
+<div class="product-image">
+<img src="images/hoodie-front.jpg" class="front">
+<img src="images/hoodie-back.jpg" class="back">
+</div>
+<div class="product-info">
+<h3>Legacy Hoodie</h3>
+<p>Rooted in wisdom. Designed for legacy.</p>
+</div>
+</div>
 
-            </div>
+<div class="product-card reveal">
+<div class="product-image">
+<img src="images/tee-front.jpg" class="front">
+<img src="images/tee-back.jpg" class="back">
+</div>
+<div class="product-info">
+<h3>Mama Was Right Tee</h3>
+<p>Because she usually was.</p>
+</div>
+</div>
 
-            <div class="product-info">
-                <h3>LEGACY CREWNECK</h3>
-                <p>Built from lessons. Worn with pride.</p>
-            </div>
-        </a>
+<div class="product-card reveal">
+<div class="product-image">
+<img src="images/rose-front.jpg" class="front">
+<img src="images/rose-back.jpg" class="back">
+</div>
+<div class="product-info">
+<h3>Rose Crewneck</h3>
+<p>Strength wrapped in softness.</p>
+</div>
+</div>
 
-        <!-- HOODIE -->
+</div>
 
-        <a href="#hoodie" class="product-card">
-            <div class="product-image">
-
-                <img src="images/hoodie-front.jpg"
-                     alt="Legacy Hoodie Front"
-                     class="front">
-
-                <img src="images/hoodie-back.jpg"
-                     alt="Legacy Hoodie Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <h3>LEGACY HOODIE</h3>
-                <p>Rooted in wisdom. Designed for legacy.</p>
-            </div>
-        </a>
-
-        <!-- TEE -->
-
-        <a href="#tee" class="product-card">
-            <div class="product-image">
-
-                <img src="images/tee-front.jpg"
-                     alt="Mama Was Right Tee Front"
-                     class="front">
-
-                <img src="images/tee-back.jpg"
-                     alt="Mama Was Right Tee Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <h3>MAMA WAS RIGHT TEE</h3>
-                <p>Because she usually was.</p>
-            </div>
-        </a>
-
-        <!-- ROSE CREWNECK -->
-
-        <a href="#rose" class="product-card">
-            <div class="product-image">
-
-                <img src="images/rose-front.jpg"
-                     alt="Rose Crewneck Front"
-                     class="front">
-
-                <img src="images/rose-back.jpg"
-                     alt="Rose Crewneck Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <h3>ROSE CREWNECK</h3>
-                <p>Strength wrapped in softness.</p>
-            </div>
-        </a>
-
-        <!-- COMPASS NECKLACE -->
-
-        <a href="#compass" class="product-card">
-            <div class="product-image">
-
-                <img src="images/compass-front.jpg"
-                     alt="Compass Necklace Front"
-                     class="front">
-
-                <img src="images/compass-back.jpg"
-                     alt="Compass Necklace Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <h3>COMPASS NECKLACE</h3>
-                <p>Guidance you carry with you.</p>
-            </div>
-        </a>
-
-        <!-- RECEIPT PENDANT -->
-
-        <a href="#pendant" class="product-card">
-            <div class="product-image">
-
-                <img src="images/pendant-front.jpg"
-                     alt="Receipt Pendant Front"
-                     class="front">
-
-                <img src="images/pendant-back.jpg"
-                     alt="Receipt Pendant Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <h3>RECEIPT PENDANT</h3>
-                <p>Proof she knew best.</p>
-            </div>
-        </a>
-
-    </div>
-
-</section>
-    </div>
+</div>
 
 </section>
 
 <section class="quote">
-<h2>“She didn't just raise me.<br>She built the blueprint.”</h2>
+
+<h2>
+“She didn't just raise me.<br>
+She built the blueprint.”
+</h2>
+
 </section>
 
-<section id="foundation" class="foundation">
-<div class="panel">
-<h2 class="title">Red Flags Foundation</h2>
-<p>A portion of every purchase supports mentorship, leadership and generational wisdom initiatives.</p>
+<section id="foundation">
+
+<div class="container">
+
+<div class="foundation-grid">
+
+<div class="panel reveal">
+<h3>Red Flags Foundation</h3>
+
+<p>
+A portion of every purchase supports mentorship,
+leadership, education, and programs that strengthen
+future generations.
+</p>
 </div>
-<div class="panel">
-<h2 class="title">Luxury. Femininity. Power.</h2>
-<p>Streetwear with meaning. Built on legacy.</p>
+
+<div class="panel reveal">
+<h3>Luxury. Femininity. Power.</h3>
+
+<p>
+Streetwear with purpose. Jewelry with meaning.
+Built on legacy. Worn with intention.
+</p>
 </div>
-</section>
 
-    <section id="collection" class="collection-section">
+</div>
 
-    <h2 class="section-title">The Collection</h2>
-    <p class="section-subtitle">
-        Luxury streetwear inspired by the women who built us.
-    </p>
-
-    <div class="collection-grid">
-
-        <!-- CREWNECK -->
-
-        <a href="#crewneck" class="product-card">
-            <div class="product-image">
-
-                <img src="images/crewneck-front.jpg"
-                     alt="Mama Crewneck Front"
-                     class="front">
-
-                <img src="images/crewneck-back.jpg"
-                     alt="Mama Crewneck Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <section id="hoodies"><h2 class="title">Legacy Hoodies</h2></section>
-                <h3>LEGACY CREWNECK</h3>
-                <p>Built from lessons. Worn with pride.</p>
-            </div>
-        </a>
-
-        <!-- HOODIE -->
-
-        <a href="#hoodie" class="product-card">
-            <div class="product-image">
-
-                <img src="images/hoodie-front.jpg"
-                     alt="Legacy Hoodie Front"
-                     class="front">
-
-                <img src="images/hoodie-back.jpg"
-                     alt="Legacy Hoodie Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <h3>LEGACY HOODIE</h3>
-                <p>Rooted in wisdom. Designed for legacy.</p>
-            </div>
-        </a>
-
-        <!-- TEE -->
-
-        <a href="#tee" class="product-card">
-            <div class="product-image">
-
-                <img src="images/tee-front.jpg"
-                     alt="Mama Was Right Tee Front"
-                     class="front">
-
-                <img src="images/tee-back.jpg"
-                     alt="Mama Was Right Tee Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <h3>MAMA WAS RIGHT TEE</h3>
-                <p>Because she usually was.</p>
-            </div>
-        </a>
-
-        <!-- ROSE CREWNECK -->
-
-        <a href="#rose" class="product-card">
-            <div class="product-image">
-
-                <img src="images/rose-front.jpg"
-                     alt="Rose Crewneck Front"
-                     class="front">
-
-                <img src="images/rose-back.jpg"
-                     alt="Rose Crewneck Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <h3>ROSE CREWNECK</h3>
-                <p>Strength wrapped in softness.</p>
-            </div>
-        </a>
-
-        <!-- COMPASS NECKLACE -->
-
-        <a href="#compass" class="product-card">
-            <div class="product-image">
-
-                <img src="images/compass-front.jpg"
-                     alt="Compass Necklace Front"
-                     class="front">
-
-                <img src="images/compass-back.jpg"
-                     alt="Compass Necklace Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <h3>COMPASS NECKLACE</h3>
-                <p>Guidance you carry with you.</p>
-            </div>
-        </a>
-
-        <!-- RECEIPT PENDANT -->
-
-        <a href="#pendant" class="product-card">
-            <div class="product-image">
-
-                <img src="images/pendant-front.jpg"
-                     alt="Receipt Pendant Front"
-                     class="front">
-
-                <img src="images/pendant-back.jpg"
-                     alt="Receipt Pendant Back"
-                     class="back">
-
-            </div>
-
-            <div class="product-info">
-                <h3>RECEIPT PENDANT</h3>
-                <p>Proof she knew best.</p>
-            </div>
-        </a>
-
-    </div>
+</div>
 
 </section>
 
-<section id="tees"><h2 class="title">Statement Tees</h2></section>
-<section id="accessories"><h2 class="title">Luxury Accessories</h2></section>
-<section id="limited"><h2 class="title">Limited Pieces</h2></section>
+<section id="join" class="join">
 
-<section id="join">
-<h2 class="title">Join The Movement</h2>
-<form class="form" action="https://formspree.io/f/xdkekagr" method="POST">
-<input type="text" name="name" placeholder="Your Name">
-<input type="email" name="email" placeholder="Email Address">
-<button class="btn">JOIN THE LIST</button>
+<div class="container">
+
+<h2 class="section-title">
+Join The Movement
+</h2>
+
+<p class="section-subtitle">
+Be first to access the launch collection.
+</p>
+
+<form class="form"
+action="https://formspree.io/f/xdkekagr"
+method="POST"
+style="justify-content:center;">
+
+<input
+type="text"
+name="name"
+placeholder="Your Name">
+
+<input
+type="email"
+name="email"
+placeholder="Email Address">
+
+<button class="btn">
+JOIN THE LIST
+</button>
+
 </form>
+
+</div>
+
 </section>
 
-<footer>© 2026 Red Flags & Receipts</footer>
+<footer>
+© 2026 Red Flags & Receipts. All Rights Reserved.
+</footer>
 
 <script>
-const launchDate=new Date("2026-08-19T06:00:00-04:00").getTime();
-function updateCountdown(){
-const now=new Date().getTime(),d=launchDate-now;
-document.getElementById('days').textContent=Math.max(0,Math.floor(d/86400000));
-document.getElementById('hours').textContent=Math.max(0,Math.floor((d%86400000)/3600000));
-document.getElementById('minutes').textContent=Math.max(0,Math.floor((d%3600000)/60000));
-document.getElementById('seconds').textContent=Math.max(0,Math.floor((d%60000)/1000));
-}
-updateCountdown();setInterval(updateCountdown,1000);
-</script>
-</body></html>
 
+const launchDate =
+new Date("2026-08-19T06:00:00-04:00").getTime();
+
+function updateCountdown(){
+
+const now = new Date().getTime();
+const distance = launchDate - now;
+
+document.getElementById("days").textContent =
+Math.max(0,Math.floor(distance/86400000));
+
+document.getElementById("hours").textContent =
+Math.max(0,Math.floor((distance%86400000)/3600000));
+
+document.getElementById("minutes").textContent =
+Math.max(0,Math.floor((distance%3600000)/60000));
+
+document.getElementById("seconds").textContent =
+Math.max(0,Math.floor((distance%60000)/1000));
+
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+});
+
+document
+.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
+```
