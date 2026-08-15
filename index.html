@@ -1,56 +1,528 @@
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="manifest" href="/manifest.json" />
-    <title>Red Flags &amp; Receipts</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX', { send_page_view: false });
-    </script>
-    <script type="module" crossorigin src="/assets/index-Cru0txLU.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DcuYHBHQ.css">
-    <script type="module">
-if (window.self === window.top) {
-  let lastPath = "";
-  function getPageNameFromPath(path) {
-    const segments = path.split("/").filter(Boolean);
-    return segments[0] || null;
-  }
-  function trackPageView() {
-    const path = window.location.pathname;
-    if (path === lastPath) return;
-    lastPath = path;
-    const pageName = getPageNameFromPath(path) || "home";
-    const appId = "";
-    if (!appId) return;
-    fetch(`/api/app-logs/${appId}/log-user-in-app/${pageName}`, {
-      method: "POST",
-    }).catch(() => {});
-  }
-  const originalPushState = history.pushState.bind(history);
-  history.pushState = function (...args) {
-    originalPushState(...args);
-    trackPageView();
-  };
-  const originalReplaceState = history.replaceState.bind(history);
-  history.replaceState = function (...args) {
-    originalReplaceState(...args);
-    trackPageView();
-  };
-  window.addEventListener("popstate", trackPageView);
-  trackPageView();
+<title>Red Flags & Receipts | She Raised Me Right</title>
+
+<meta name="description" content="A tribute to the women who taught us strength, wisdom, and resilience.">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --gold:#d4a056;
+    --black:#050505;
+    --white:#ffffff;
 }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    font-family:'Montserrat',sans-serif;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* NAVIGATION */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(10px);
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 0;
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    color:var(--gold);
+}
+
+nav{
+    display:flex;
+    gap:35px;
+}
+
+nav a{
+    position:relative;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    bottom:-6px;
+    left:0;
+    width:0;
+    height:1px;
+    background:var(--gold);
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold);
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+
+    background-image:url("images/she-raised-me-right.jpg");
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.88) 0%,
+        rgba(0,0,0,.70) 35%,
+        rgba(0,0,0,.25) 100%
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    max-width:650px;
+}
+
+.launch-date{
+    color:var(--gold);
+    letter-spacing:3px;
+    margin-bottom:25px;
+    font-size:.85rem;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:6.5rem;
+    line-height:.9;
+    color:var(--gold);
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:1.15rem;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+/* COUNTDOWN */
+
+.countdown-title{
+    color:var(--gold);
+    margin-bottom:20px;
+    letter-spacing:2px;
+}
+
+.countdown{
+    display:flex;
+    gap:25px;
+    margin-bottom:45px;
+}
+
+.time-box{
+    text-align:center;
+}
+
+.time-box span{
+    display:block;
+    font-size:3rem;
+    font-weight:600;
+    color:var(--gold);
+}
+
+/* FORM */
+
+.signup{
+    display:grid;
+    gap:15px;
+}
+
+.signup input{
+    width:100%;
+    padding:15px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(212,160,86,.35);
+    color:white;
+}
+
+.signup input:focus{
+    outline:none;
+    border-color:var(--gold);
+}
+
+.btn{
+    border:none;
+    background:var(--gold);
+    color:black;
+    font-weight:600;
+    padding:16px;
+    cursor:pointer;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* STORY SECTION */
+
+.story{
+    padding:120px 0;
+    background:#090909;
+}
+
+.section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:4rem;
+    color:var(--gold);
+    margin-bottom:25px;
+}
+
+.story p{
+    max-width:800px;
+    line-height:2;
+    font-size:1.1rem;
+}
+
+/* COLLECTION PREVIEW */
+
+.collection{
+    padding:120px 0;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.card{
+    border:1px solid rgba(212,160,86,.2);
+    padding:40px 30px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+}
+
+.card h3{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(212,160,86,.15);
+    text-align:center;
+    padding:60px 20px;
+}
+
+footer p{
+    margin-top:20px;
+    opacity:.8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        background-position:65% center;
+    }
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    .countdown{
+        flex-wrap:wrap;
+    }
+
+    .time-box span{
+        font-size:2rem;
+    }
+
+    .section-title{
+        font-size:2.8rem;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+            RED FLAGS & RECEIPTS
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="collection.html">Collection</a>
+            <a href="about.html">About</a>
+            <a href="foundation.html">Foundation</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="launch-date">
+                AUGUST 19, 2026 • 6:00 AM EST
+            </div>
+
+            <h1>
+                She Raised<br>
+                Me Right.
+            </h1>
+
+            <p>
+                A tribute to the women whose wisdom became our blueprint.
+                Every lesson. Every warning. Every sacrifice.
+                Every receipt.
+            </p>
+
+            <div class="countdown-title">
+                COLLECTION RELEASES IN
+            </div>
+
+            <div class="countdown">
+
+                <div class="time-box">
+                    <span id="days">00</span>
+                    DAYS
+                </div>
+
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    HOURS
+                </div>
+
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    MINUTES
+                </div>
+
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    SECONDS
+                </div>
+
+            </div>
+
+            <form
+                class="signup"
+                action="https://formspree.io/f/xdkekagr"
+                method="POST">
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required>
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="Launch List Signup">
+
+                <button
+                    type="submit"
+                    class="btn">
+                    JOIN THE LAUNCH LIST
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="story">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Our Story
+        </h2>
+
+        <p>
+            Red Flags & Receipts was created to honor the women who taught
+            us how to move through life with strength, intuition, grace,
+            and resilience. Before there were influencers, there were
+            mothers. Before there were life coaches, there were
+            grandmothers. Before there were podcasts, there were kitchen
+            table conversations. This collection is our tribute to them.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="collection">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Coming Soon
+        </h2>
+
+        <div class="cards">
+
+            <a href="collection.html" class="card">
+                <h3>The Legacy Hoodie</h3>
+                <p>Inspired by the women who taught us resilience.</p>
+            </a>
+
+            <a href="collection.html" class="card">
+                <h3>Statement Tees</h3>
+                <p>Lessons worth wearing.</p>
+            </a>
+
+            <a href="collection.html" class="card">
+                <h3>Luxury Accessories</h3>
+                <p>Small details. Lasting impact.</p>
+            </a>
+
+            <a href="collection.html" class="card">
+                <h3>Limited Pieces</h3>
+                <p>Rare. Exclusive. Iconic.</p>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>DON'T MISS THE DROP</h3>
+
+    <p>
+        Join the launch list for early access and exclusive previews.
+    </p>
+
+    <p>
+        © 2026 Red Flags & Receipts
+    </p>
+
+</footer>
+
+<script>
+
+const launchDate =
+new Date("2026-08-19T06:00:00-04:00").getTime();
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+
+    const distance = launchDate - now;
+
+    const days =
+    Math.floor(distance / (1000*60*60*24));
+
+    const hours =
+    Math.floor(
+    (distance%(1000*60*60*24))
+    /(1000*60*60));
+
+    const minutes =
+    Math.floor(
+    (distance%(1000*60*60))
+    /(1000*60));
+
+    const seconds =
+    Math.floor(
+    (distance%(1000*60))
+    /1000);
+
+    document.getElementById('days').textContent =
+    String(days).padStart(2,'0');
+
+    document.getElementById('hours').textContent =
+    String(hours).padStart(2,'0');
+
+    document.getElementById('minutes').textContent =
+    String(minutes).padStart(2,'0');
+
+    document.getElementById('seconds').textContent =
+    String(seconds).padStart(2,'0');
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
 </script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+</body>
 </html>
+```
