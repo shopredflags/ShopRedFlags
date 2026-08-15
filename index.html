@@ -756,3 +756,761 @@ document
 </body>
 </html>
 ```
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Red Flags & Receipts | She Raised Me Right</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --gold:#d4a056;
+    --gold-light:#f4d29a;
+    --gold-dark:#9a6a2b;
+
+    --bg:#050505;
+    --panel:#0d0d0d;
+
+    --white:#ffffff;
+    --muted:#b8b8b8;
+
+    --border:1px solid rgba(212,160,86,.18);
+
+    --shadow:
+        0 25px 80px rgba(0,0,0,.55);
+
+    --radius:24px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:"Inter",sans-serif;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.035;
+    background-image:
+        url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    z-index:9999;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+section{
+    padding:120px 7%;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+header{
+    position:fixed;
+    top:20px;
+    left:20px;
+    right:20px;
+    z-index:1000;
+
+    background:rgba(8,8,8,.55);
+    backdrop-filter:blur(20px);
+
+    border:var(--border);
+    border-radius:999px;
+}
+
+.nav{
+    max-width:1500px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 35px;
+}
+
+.logo{
+    font-family:"Cormorant Garamond",serif;
+    color:var(--gold);
+    font-size:2rem;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+}
+
+.nav-links a{
+    color:#ddd;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.hero video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.45)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:760px;
+    padding:0 7%;
+}
+
+.kicker{
+    color:var(--gold);
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:7rem;
+    line-height:.88;
+    color:var(--gold-light);
+}
+
+.hero p{
+    font-size:1.3rem;
+    color:#ddd;
+    max-width:650px;
+    margin:30px 0;
+}
+
+.countdown{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+    margin:40px 0;
+}
+
+.time-box{
+    min-width:110px;
+}
+
+.time-box span{
+    display:block;
+    font-size:3rem;
+    font-weight:700;
+    color:var(--gold);
+}
+
+.form{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.form input{
+    background:#111;
+    border:var(--border);
+    color:white;
+    padding:18px;
+    min-width:260px;
+}
+
+.btn{
+    border:none;
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+    );
+
+    color:black;
+    font-weight:700;
+
+    padding:18px 34px;
+    transition:.35s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 45px rgba(212,160,86,.35);
+}
+
+.section-title{
+    text-align:center;
+    font-family:"Cormorant Garamond",serif;
+    font-size:4.5rem;
+    color:var(--gold);
+}
+
+.section-subtitle{
+    text-align:center;
+    color:var(--muted);
+    max-width:700px;
+    margin:20px auto 70px;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.story-card{
+    padding:60px;
+    background:var(--panel);
+    border:var(--border);
+    border-radius:var(--radius);
+}
+
+.story-card h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:3rem;
+    color:var(--gold);
+    margin-bottom:20px;
+}
+
+.story-card p{
+    color:#cfcfcf;
+    line-height:1.9;
+}
+
+.collection-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+}
+
+.product-card{
+    border:var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:#0a0a0a;
+    transition:.5s;
+    box-shadow:var(--shadow);
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+    border-color:var(--gold);
+}
+
+.product-image{
+    position:relative;
+    height:520px;
+    overflow:hidden;
+}
+
+.product-image img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+}
+
+.product-image .back{
+    opacity:0;
+}
+
+.product-card:hover .front{
+    opacity:0;
+}
+
+.product-card:hover .back{
+    opacity:1;
+}
+
+.product-info{
+    padding:25px;
+}
+
+.product-info h3{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+.product-info p{
+    color:#cfcfcf;
+}
+
+.quote{
+    text-align:center;
+    padding:180px 10%;
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(212,160,86,.10),
+        transparent 70%
+    );
+}
+
+.quote h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:5rem;
+    line-height:1.1;
+    color:var(--gold-light);
+}
+
+.foundation-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.panel{
+    background:var(--panel);
+    border:var(--border);
+    border-radius:var(--radius);
+    padding:50px;
+}
+
+.panel h3{
+    color:var(--gold);
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.panel p{
+    color:#d5d5d5;
+    line-height:1.8;
+}
+
+.join{
+    text-align:center;
+}
+
+footer{
+    padding:80px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#888;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:none;
+}
+
+@media(max-width:1000px){
+
+    .hero h1{
+        font-size:4.5rem;
+    }
+
+    .story-grid,
+    .foundation-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    .section-title{
+        font-size:3rem;
+    }
+
+    .quote h2{
+        font-size:2.8rem;
+    }
+
+    .product-image{
+        height:420px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav">
+
+<div class="logo">
+RED FLAGS & RECEIPTS
+</div>
+
+<nav class="nav-links">
+<a href="#story">Story</a>
+<a href="#collection">Collection</a>
+<a href="#foundation">Foundation</a>
+<a href="#join">Join</a>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+
+<video autoplay muted loop playsinline>
+<source src="hero-video.mp4" type="video/mp4">
+</video>
+
+<div class="hero-content">
+
+<div class="kicker">
+AUGUST 19, 2026 • 6:00 AM EASTERN
+</div>
+
+<h1>
+She Raised<br>
+Me Right.
+</h1>
+
+<p>
+A tribute to the women who taught us strength,
+intuition, grace, resilience, and legacy.
+</p>
+
+<div class="countdown">
+
+<div class="time-box">
+<span id="days">00</span>
+DAYS
+</div>
+
+<div class="time-box">
+<span id="hours">00</span>
+HOURS
+</div>
+
+<div class="time-box">
+<span id="minutes">00</span>
+MINUTES
+</div>
+
+<div class="time-box">
+<span id="seconds">00</span>
+SECONDS
+</div>
+
+</div>
+
+<form class="form"
+action="https://formspree.io/f/xdkekagr"
+method="POST">
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
+
+<button class="btn">
+NOTIFY ME
+</button>
+
+</form>
+
+</div>
+</section>
+
+<section id="story">
+
+<div class="container">
+
+<div class="story-grid">
+
+<div class="story-card reveal">
+<h2>Raised Right.</h2>
+
+<p>
+This is more than a collection.
+It's a thank-you letter to the women
+whose wisdom became our foundation.
+Every lesson. Every warning.
+Every hug. Every receipt.
+</p>
+</div>
+
+<div class="story-card reveal">
+<h2>Built on Legacy.</h2>
+
+<p>
+Luxury streetwear inspired by motherhood,
+strength, femininity, and generational wisdom.
+Designed to be worn proudly and passed forward.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="collection">
+
+<div class="container">
+
+<h2 class="section-title reveal">
+The Collection
+</h2>
+
+<p class="section-subtitle reveal">
+Luxury apparel and jewelry inspired by the women who built us.
+</p>
+
+<div class="collection-grid">
+
+<div class="product-card reveal">
+<div class="product-image">
+<img src="images/crewneck-front.jpg" class="front">
+<img src="images/crewneck-back.jpg" class="back">
+</div>
+<div class="product-info">
+<h3>Legacy Crewneck</h3>
+<p>Built from lessons. Worn with pride.</p>
+</div>
+</div>
+
+<div class="product-card reveal">
+<div class="product-image">
+<img src="images/hoodie-front.jpg" class="front">
+<img src="images/hoodie-back.jpg" class="back">
+</div>
+<div class="product-info">
+<h3>Legacy Hoodie</h3>
+<p>Rooted in wisdom. Designed for legacy.</p>
+</div>
+</div>
+
+<div class="product-card reveal">
+<div class="product-image">
+<img src="images/tee-front.jpg" class="front">
+<img src="images/tee-back.jpg" class="back">
+</div>
+<div class="product-info">
+<h3>Mama Was Right Tee</h3>
+<p>Because she usually was.</p>
+</div>
+</div>
+
+<div class="product-card reveal">
+<div class="product-image">
+<img src="images/rose-front.jpg" class="front">
+<img src="images/rose-back.jpg" class="back">
+</div>
+<div class="product-info">
+<h3>Rose Crewneck</h3>
+<p>Strength wrapped in softness.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="quote">
+
+<h2>
+“She didn't just raise me.<br>
+She built the blueprint.”
+</h2>
+
+</section>
+
+<section id="foundation">
+
+<div class="container">
+
+<div class="foundation-grid">
+
+<div class="panel reveal">
+<h3>Red Flags Foundation</h3>
+
+<p>
+A portion of every purchase supports mentorship,
+leadership, education, and programs that strengthen
+future generations.
+</p>
+</div>
+
+<div class="panel reveal">
+<h3>Luxury. Femininity. Power.</h3>
+
+<p>
+Streetwear with purpose. Jewelry with meaning.
+Built on legacy. Worn with intention.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="join" class="join">
+
+<div class="container">
+
+<h2 class="section-title">
+Join The Movement
+</h2>
+
+<p class="section-subtitle">
+Be first to access the launch collection.
+</p>
+
+<form class="form"
+action="https://formspree.io/f/xdkekagr"
+method="POST"
+style="justify-content:center;">
+
+<input
+type="text"
+name="name"
+placeholder="Your Name">
+
+<input
+type="email"
+name="email"
+placeholder="Email Address">
+
+<button class="btn">
+JOIN THE LIST
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Red Flags & Receipts. All Rights Reserved.
+</footer>
+
+<script>
+
+const launchDate =
+new Date("2026-08-19T06:00:00-04:00").getTime();
+
+function updateCountdown(){
+
+const now = new Date().getTime();
+const distance = launchDate - now;
+
+document.getElementById("days").textContent =
+Math.max(0,Math.floor(distance/86400000));
+
+document.getElementById("hours").textContent =
+Math.max(0,Math.floor((distance%86400000)/3600000));
+
+document.getElementById("minutes").textContent =
+Math.max(0,Math.floor((distance%3600000)/60000));
+
+document.getElementById("seconds").textContent =
+Math.max(0,Math.floor((distance%60000)/1000));
+
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+
+});
+
+});
+
+document
+.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
+```
