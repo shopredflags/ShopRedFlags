@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -251,42 +251,14 @@ header{
     background:rgba(255,255,255,.10);
     transform:translateY(-4px);
 }
-/* IMAGE BREAK */
-    .hero-image-break{
-    width:100%;
-    padding:80px 5%;
-}
-
-.hero-image-break img{
-    width:100%;
-    display:block;
-    border-radius:30px;
-}
-<section class="legacy-section">
-
-    <div class="legacy-image">
-        <img src="images/hero2.jpg" alt="Mother and Daughter">
-    </div>
-
-    <div class="legacy-copy">
-
-        <span class="legacy-kicker">
-            THE STORY BEHIND THE COLLECTION
-        </span>
-
-        <h2>
-            She Didn't Just Raise Me.
-            <br>
-            She Built The Blueprint.
-        </h2>
-
-        <p>
-            This collection was created to honor the women whose wisdom became our foundation.
-        </p>
-
-    </div>
-
+<section class="hero-image-break">
+  <img src="images/hero2.jpg" alt="">
 </section>
+
+<section class="hero-image-break">
+  <img src="images/hero3.jpg" alt="">
+</section>
+
 
 /* SECTION TITLES */
 
@@ -551,13 +523,42 @@ A tribute to the women who taught us strength, intuition,
 grace, resilience, wisdom, and unconditional love.
 Every lesson became a legacy.
 </p>
+<section class="hero hero-1">
+<div class="hero-content">
+    <h1>Collection</h1>
+   <a href="#collection" class="btn-primary">Shop Collection</a>
+  </div>  <div class="hero-content">
+    <h1>Your headline here</h1>
+    <p>Your subtext here</p>
+  </div>
+</section>
+
+<section class="hero hero-2">
+  <div class="hero-content">
+    <h1>Collection</h1>
+   <a href="#collection" class="btn-primary">Shop Collection</a>
+  </div>
+</section>
 
 <div class="hero-buttons">
-<a href="#collection" class="btn-primary">Shop Collection</a>
+
 <a href="#join" class="btn-secondary">Join Waitlist</a>
 </div>
 
 </div>
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  z-index: 3;
+}
+.hero + .hero {
+  margin-top: -40px;
+}
 
 </section>
 
