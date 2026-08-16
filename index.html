@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,6 +26,10 @@ footer{border-top:1px solid rgba(255,255,255,.08);padding:44px 0 60px;color:#999
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;place-items:center;z-index:99;padding:20px}.modal.open{display:grid}.modal-card{width:min(650px,96vw);max-height:88vh;overflow:auto;background:#0d0d0d;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 30px 100px #000}.modal-close{float:right;background:none;border:1px solid var(--line);color:#fff;border-radius:50%;width:40px;height:40px;cursor:pointer}.modal-card h2{font-family:"Cormorant Garamond",serif;color:var(--gold2);font-size:2.4rem;margin:6px 0 14px}.modal-card p{line-height:1.75;color:#ccc}.product-detail-img{width:100%;max-height:430px;object-fit:contain;background:#eee;border-radius:16px;margin:10px 0 20px}
 @media(max-width:920px){.signup-row{grid-template-columns:1fr 1fr}.signup-row strong{grid-column:1/-1}.signup-row .message-field{grid-column:1/-1}.signup-row button{grid-column:1/-1}.form-note{grid-column:1/-1}.story-grid{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:680px){.top-signup{padding:12px 0}.signup-row{grid-template-columns:1fr}.signup-row>*{grid-column:1!important}.nav-links{position:fixed;top:74px;left:0;right:0;background:#080808;border-bottom:1px solid var(--line);padding:28px;display:none;flex-direction:column}.nav-links.open{display:flex}.menu-btn{display:block}.hero{min-height:760px;background-position:64% center}.hero-inner{padding:70px 0}.hero h1{font-size:4.4rem}.countdown{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:1fr}.product-media{height:330px}.join-card{padding:34px 18px}.join-form{grid-template-columns:1fr}.join-form>*{grid-column:1!important}.foot{flex-direction:column;text-align:center;justify-content:center}}
+
+/* Birthday surprise */
+.mom-lock{text-align:center;padding:16px 4px 4px}.mom-lock .lock-icon{font-size:2.3rem;filter:drop-shadow(0 0 18px rgba(217,170,91,.35));margin-bottom:8px}.mom-lock h2{font-size:3rem;margin-bottom:8px}.mom-lock .secret-note{color:#e7dcc8;max-width:470px;margin:0 auto 22px}.mom-pass{display:flex;gap:10px;max-width:430px;margin:0 auto;flex-wrap:wrap;justify-content:center}.mom-pass .field{flex:1;min-width:220px}.mom-error{min-height:1.25em;margin:12px 0 0;color:#e8a6a6;font-size:.88rem}.mom-surprise{position:relative;text-align:center;padding:8px 0 4px;overflow:hidden}.mom-surprise:before{content:"";position:absolute;inset:-30% -10%;background:radial-gradient(circle at 50% 10%,rgba(217,170,91,.18),transparent 38%),radial-gradient(circle at 20% 55%,rgba(142,18,42,.14),transparent 34%);pointer-events:none}.mom-surprise>*{position:relative}.birthday-kicker{letter-spacing:.32em;text-transform:uppercase;color:var(--gold2);font-size:.72rem;font-weight:700}.mom-surprise h2{font-size:clamp(3.4rem,8vw,5.5rem);line-height:.84;margin:12px 0 18px}.mom-surprise h2 em{display:block;font-style:italic;color:#fff;font-size:.52em;margin-top:14px}.mom-hero{width:100%;height:310px;object-fit:cover;border-radius:20px;margin:12px 0 24px;box-shadow:0 24px 70px #000;border:1px solid var(--line)}.birthday-lead{font-family:"Cormorant Garamond",serif;font-size:1.65rem;line-height:1.25;color:#f3e7d0;max-width:540px;margin:0 auto 18px}.birthday-copy{max-width:560px;margin:0 auto;color:#cfc8be!important}.birthday-divider{width:90px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:26px auto}.memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}.memory-grid img{width:100%;height:145px;object-fit:contain;background:#f0ede6;border-radius:14px;padding:5px}.letter-btn{margin-top:8px}.mom-letter{display:none;text-align:left;margin:24px auto 0;max-width:560px;padding:28px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(217,170,91,.09),rgba(255,255,255,.02));animation:letterIn .7s ease both}.mom-letter.open{display:block}.mom-letter h3{font-family:"Cormorant Garamond",serif;color:var(--gold2);font-size:2rem;margin:0 0 14px}.mom-letter p{color:#ddd}.mom-signoff{font-family:"Cormorant Garamond",serif;font-size:1.55rem;color:var(--gold2)!important}.confetti{position:fixed;top:-20px;z-index:150;width:9px;height:14px;border-radius:2px;pointer-events:none;animation:confettiFall var(--dur) linear forwards;transform:rotate(var(--rot))}.heart-pop{position:fixed;z-index:151;pointer-events:none;font-size:20px;animation:heartFloat 2.2s ease-out forwards}@keyframes confettiFall{to{transform:translate3d(var(--drift),110vh,0) rotate(760deg);opacity:.15}}@keyframes heartFloat{0%{transform:translateY(0) scale(.6);opacity:0}20%{opacity:1}100%{transform:translateY(-130px) scale(1.25);opacity:0}}@keyframes letterIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@media(max-width:600px){.memory-grid{grid-template-columns:1fr 1fr}.memory-grid img:last-child{grid-column:1/-1}.mom-hero{height:250px}.mom-pass{display:grid}.mom-pass .field{min-width:0}.modal-card{padding:22px}.mom-lock h2{font-size:2.5rem}}
+
 </style>
 </head>
 <body>
@@ -87,48 +90,15 @@ $$('.signup-form').forEach(form=>form.addEventListener('submit',async e=>{e.prev
 $('#calendarBtn').addEventListener('click',()=>{const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Red Flags & Receipts//Launch//EN','BEGIN:VEVENT','UID:redflags-20260819@redflagsandreceipts.com','DTSTAMP:20260819T100000Z','DTSTART:20260819T100000Z','DTEND:20260819T110000Z','SUMMARY:Red Flags & Receipts — She Raised Me Right Launch','DESCRIPTION:The She Raised Me Right collection is live.','END:VEVENT','END:VCALENDAR'].join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='Red-Flags-and-Receipts-Launch.ics';a.click();URL.revokeObjectURL(a.href)});
 const modal=$('#infoModal'), body=$('#modalBody');function openModal(html){body.innerHTML=html;modal.classList.add('open');$('.modal-close').focus()}function closeModal(){modal.classList.remove('open')}
 $$('.product').forEach(card=>{const show=()=>openModal(`<img class="product-detail-img" src="${card.dataset.img}" alt=""><h2 id="modalTitle">${card.dataset.title}</h2><p>${card.dataset.desc}</p><p><strong style="color:var(--gold2)">Launching August 19.</strong> Join the list for first access.</p>`);card.addEventListener('click',show);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show()}})});
-const copy={privacy:`<h2 id="modalTitle">Privacy</h2><p>Information submitted through this site is used to respond to you and send launch or collection updates you request. Do not submit sensitive information through the forms.</p><p>You may request removal from future messages at any time by contacting us.</p>`,terms:`<h2 id="modalTitle">Terms</h2><p>This launch page previews the Red Flags & Receipts collection. Product availability, final pricing and release quantities may change before launch. Content and brand materials are owned by Red Flags & Receipts unless otherwise stated.</p>`,mom:`<h2 id="modalTitle">For Mom</h2><p>She didn't just raise me. She built the blueprint.</p><p>This collection is a thank-you for the love, lessons, warnings, strength and grace that became part of who I am.</p>`};$$('[data-modal]').forEach(b=>b.addEventListener('click',()=>openModal(copy[b.dataset.modal])));$('.modal-close').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-<!-- FOR MOM -->
-<button onclick="openMomCode()">For Mom</button>
-
-<div id="momCodeBox" style="display:none; margin-top:20px;">
-  <h2>For Mom ❤️</h2>
-  <p>Enter code:</p>
-
-  <input
-    type="password"
-    id="momCode"
-    placeholder="Enter code"
-  />
-
-  <button onclick="checkMomCode()">Unlock</button>
-
-  <p id="momMessage"></p>
-</div>
-
-<div id="momSecret" style="display:none; margin-top:20px;">
-  <h1>Happy Birthday, Bean! 🎂❤️</h1>
-  <p>Your special birthday message goes here.</p>
-</div>
-
-<script>
-  function openMomCode() {
-    document.getElementById("momCodeBox").style.display = "block";
-  }
-
-  function checkMomCode() {
-    const enteredCode = document.getElementById("momCode").value;
-    const correctCode = "BEAN"; // <-- CHANGE THE CODE HERE
-
-    if (enteredCode === correctCode) {
-      document.getElementById("momCodeBox").style.display = "none";
-      document.getElementById("momSecret").style.display = "block";
-    } else {
-      document.getElementById("momMessage").textContent =
-        "Wrong code. Try again ❤️";
-    }
-  }
-</script>
+const copy={privacy:`<h2 id="modalTitle">Privacy</h2><p>Information submitted through this site is used to respond to you and send launch or collection updates you request. Do not submit sensitive information through the forms.</p><p>You may request removal from future messages at any time by contacting us.</p>`,terms:`<h2 id="modalTitle">Terms</h2><p>This launch page previews the Red Flags & Receipts collection. Product availability, final pricing and release quantities may change before launch. Content and brand materials are owned by Red Flags & Receipts unless otherwise stated.</p>`};
+const MOM_HASH='4d2ff8752833cf9e8a405f614954a45063fd0c0e8196c4710cad5b87a10c299f';
+function momGate(){openModal(`<div class="mom-lock"><div class="lock-icon">✦</div><div class="birthday-kicker">A private birthday surprise</div><h2 id="modalTitle">For Mom Only</h2><p class="secret-note">There is something waiting behind this door that was made just for you.</p><form class="mom-pass" id="momPassForm"><input class="field" id="momPassword" type="password" placeholder="Enter the secret password" autocomplete="off" aria-label="Birthday surprise password"><button class="gold-btn" type="submit">Open My Surprise</button></form><p class="mom-error" id="momError" aria-live="polite"></p><p style="font-size:.74rem;color:#80796f;margin-top:16px">Hint: lowercase, no spaces.</p></div>`);setTimeout(()=>$('#momPassword')?.focus(),80)}
+async function sha256(text){const data=new TextEncoder().encode(text);const hash=await crypto.subtle.digest('SHA-256',data);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('')}
+function confettiBurst(){const colors=['#d9aa5b','#f0cf92','#ffffff','#8e122a','#e7c57f'];for(let i=0;i<90;i++){const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.background=colors[Math.floor(Math.random()*colors.length)];c.style.setProperty('--dur',(2.8+Math.random()*2.8)+'s');c.style.setProperty('--drift',((Math.random()-.5)*240)+'px');c.style.setProperty('--rot',(Math.random()*180)+'deg');document.body.appendChild(c);setTimeout(()=>c.remove(),6000)}}
+function heartBurst(){for(let i=0;i<16;i++){setTimeout(()=>{const h=document.createElement('span');h.className='heart-pop';h.textContent=i%3===0?'✦':'♥';h.style.left=(38+Math.random()*24)+'vw';h.style.top=(45+Math.random()*20)+'vh';h.style.color=i%2?'#f0cf92':'#fff';document.body.appendChild(h);setTimeout(()=>h.remove(),2400)},i*55)}}
+function showMomSurprise(){body.innerHTML=`<div class="mom-surprise"><div class="birthday-kicker">August 19 • This one is yours</div><h2 id="modalTitle">Happy Birthday, Mom.<em>You are the reason this exists.</em></h2><img class="mom-hero" src="images/hero2.jpg" alt="She Raised Me Right birthday tribute"><p class="birthday-lead">Before there was a collection, a launch, or a name for any of this — there was you.</p><p class="birthday-copy">You taught me how to trust myself, how to keep going, how to laugh through the hard parts, and how to know when something just isn't right. Every lesson became part of me. Every warning became wisdom. Every bit of strength you gave me found its way here.</p><div class="birthday-divider"></div><p class="birthday-lead">So on your birthday, I wanted the world to see what I already know:</p><p class="birthday-copy"><strong style="color:var(--gold2);font-size:1.15rem">She Raised Me Right.</strong><br>This is more than a drop. It's a thank-you. It's a love letter. It's proof that what you poured into me kept growing.</p><div class="memory-grid"><img src="images/tribute-front.PNG" alt="Birthday tribute piece"><img src="images/pendant-front.PNG" alt="Legacy pendant"><img src="images/keychain-front.PNG" alt="Legacy keychain"></div><button class="gold-btn letter-btn" id="openLetter" type="button">Open Your Letter</button><div class="mom-letter" id="momLetter"><h3>Mom,</h3><p>There aren't enough words for everything you've given me, so I made something instead. I made a collection around the truth that has followed me everywhere: <strong>you raised me right.</strong></p><p>Thank you for the strength, the instincts, the standards, the stories, the warnings, the humor, and the love. Thank you for being the blueprint even when I didn't realize I was studying it.</p><p>I hope this birthday surprise makes you feel even a fraction of how celebrated you deserve to feel. This launch may have my name on the work, but your fingerprints are all over the woman who made it.</p><p class="mom-signoff">Happy Birthday, Mama.<br>I love you. Always. ♥</p></div><p style="margin-top:24px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#827a70">A private page made with love • Red Flags & Receipts</p></div>`;confettiBurst();heartBurst();$('#openLetter').addEventListener('click',()=>{const l=$('#momLetter');l.classList.add('open');$('#openLetter').textContent='With All My Love ♥';$('#openLetter').disabled=true;l.scrollIntoView({behavior:'smooth',block:'nearest'});heartBurst()})}
+$$('[data-modal]').forEach(b=>b.addEventListener('click',()=>b.dataset.modal==='mom'?momGate():openModal(copy[b.dataset.modal])));
+modal.addEventListener('submit',async e=>{if(e.target?.id!=='momPassForm')return;e.preventDefault();const val=$('#momPassword').value.trim();const err=$('#momError');err.textContent='Checking…';try{if(await sha256(val)===MOM_HASH){showMomSurprise()}else{err.textContent='That one did not open it. Try again ♥';$('#momPassword').select()}}catch{err.textContent='This browser could not check the password. Please try another browser.'}});$('.modal-close').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 </script>
 </body>
 </html>
