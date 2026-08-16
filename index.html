@@ -88,6 +88,47 @@ $('#calendarBtn').addEventListener('click',()=>{const ics=['BEGIN:VCALENDAR','VE
 const modal=$('#infoModal'), body=$('#modalBody');function openModal(html){body.innerHTML=html;modal.classList.add('open');$('.modal-close').focus()}function closeModal(){modal.classList.remove('open')}
 $$('.product').forEach(card=>{const show=()=>openModal(`<img class="product-detail-img" src="${card.dataset.img}" alt=""><h2 id="modalTitle">${card.dataset.title}</h2><p>${card.dataset.desc}</p><p><strong style="color:var(--gold2)">Launching August 19.</strong> Join the list for first access.</p>`);card.addEventListener('click',show);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show()}})});
 const copy={privacy:`<h2 id="modalTitle">Privacy</h2><p>Information submitted through this site is used to respond to you and send launch or collection updates you request. Do not submit sensitive information through the forms.</p><p>You may request removal from future messages at any time by contacting us.</p>`,terms:`<h2 id="modalTitle">Terms</h2><p>This launch page previews the Red Flags & Receipts collection. Product availability, final pricing and release quantities may change before launch. Content and brand materials are owned by Red Flags & Receipts unless otherwise stated.</p>`,mom:`<h2 id="modalTitle">For Mom</h2><p>She didn't just raise me. She built the blueprint.</p><p>This collection is a thank-you for the love, lessons, warnings, strength and grace that became part of who I am.</p>`};$$('[data-modal]').forEach(b=>b.addEventListener('click',()=>openModal(copy[b.dataset.modal])));$('.modal-close').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+<!-- FOR MOM -->
+<button onclick="openMomCode()">For Mom</button>
+
+<div id="momCodeBox" style="display:none; margin-top:20px;">
+  <h2>For Mom ❤️</h2>
+  <p>Enter code:</p>
+
+  <input
+    type="password"
+    id="momCode"
+    placeholder="Enter code"
+  />
+
+  <button onclick="checkMomCode()">Unlock</button>
+
+  <p id="momMessage"></p>
+</div>
+
+<div id="momSecret" style="display:none; margin-top:20px;">
+  <h1>Happy Birthday, Bean! 🎂❤️</h1>
+  <p>Your special birthday message goes here.</p>
+</div>
+
+<script>
+  function openMomCode() {
+    document.getElementById("momCodeBox").style.display = "block";
+  }
+
+  function checkMomCode() {
+    const enteredCode = document.getElementById("momCode").value;
+    const correctCode = "BEAN"; // <-- CHANGE THE CODE HERE
+
+    if (enteredCode === correctCode) {
+      document.getElementById("momCodeBox").style.display = "none";
+      document.getElementById("momSecret").style.display = "block";
+    } else {
+      document.getElementById("momMessage").textContent =
+        "Wrong code. Try again ❤️";
+    }
+  }
+</script>
 </script>
 </body>
 </html>
