@@ -1,803 +1,146 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Red Flags & Receipts | She Raised Me Right</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- ========================================= -->
+<!--   RED FLAGS & RECEIPTS — HERO SYSTEM      -->
+<!--   Cinematic Editorial Banner Sections     -->
+<!--   Parallax + Fade + Text Reveal           -->
+<!-- ========================================= -->
 
 <style>
+  /* ============================
+     BASE HERO LAYOUT
+     ============================ */
+  .hero {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* PARALLAX */
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+  }
 
-    .footer-secret a{
-    color:rgba(255,255,255,.25);
-    font-size:.8rem;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    transition:.3s;
-}
+  /* ============================
+     TEXT OVERLAY
+     ============================ */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    font-family: "Inter", sans-serif;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: heroFadeUp 1.4s ease-out forwards;
+  }
 
-.footer-secret a:hover{
-    color:var(--gold);
-}
-:root{
-    --gold:#d4a056;
-    --gold-light:#f4d29a;
-    --gold-dark:#9a6a2b;
-    --bg:#050505;
-    --panel:#0f0f0f;
-    --text:#ffffff;
-    --muted:#b8b8b8;
-    --border:1px solid rgba(212,160,86,.18);
-    --radius:24px;
-    --shadow:0 30px 80px rgba(0,0,0,.55);
-}
+  .hero-content h1 {
+    font-size: 3.4rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  .hero-content p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    opacity: 0.9;
+  }
 
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:"Inter",sans-serif;
-    overflow-x:hidden;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    opacity:.03;
-    background-image:url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-    z-index:9999;
-}
-
-img{
-    display:block;
-    width:100%;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-.container{
-    width:min(1400px,92%);
-    margin:auto;
-}
-
-section{
-    padding:120px 0;
-}
-
-/* NAV */
-
-header{
-    position:fixed;
-    top:20px;
-    left:20px;
-    right:20px;
-    z-index:1000;
-}
-
-.nav{
-    max-width:1500px;
-    margin:auto;
-    padding:18px 34px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    background:rgba(8,8,8,.6);
-    backdrop-filter:blur(18px);
-    border:var(--border);
-    border-radius:999px;
-}
-
-.logo{
-    font-family:"Cormorant Garamond",serif;
-    color:var(--gold);
-    font-size:2rem;
-    font-weight:700;
-}
-
-.nav-links{
-    display:flex;
-    gap:30px;
-}
-
-.nav-links a{
-    color:#ddd;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:var(--gold);
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.55)
-    ),
-    url("images/hero.png");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-}
-
-.hero-content{
-    max-width:900px;
-    padding:40px;
-}
-
-.hero-kicker{
-    color:var(--gold);
-    letter-spacing:4px;
-    text-transform:uppercase;
-    margin-bottom:25px;
-    font-size:.8rem;
-}
-
-.hero h1{
-    font-family:"Cormorant Garamond",serif;
-    font-size:clamp(4rem,8vw,7rem);
-    line-height:.92;
-    color:white;
-}
-
-.hero p{
-    max-width:720px;
-    margin:30px auto;
-    font-size:1.2rem;
-    line-height:1.9;
-    color:rgba(255,255,255,.88);
-}
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    flex-wrap:wrap;
-    margin-top:40px;
-}
-.hero-buttons{
-    margin-top:55px;
-}
-
-.btn-primary,
-.btn-secondary{
-
-    min-width:240px;
-
-    padding:20px 44px;
-
-    font-size:.95rem;
-
-    letter-spacing:1.5px;
-
-    text-transform:uppercase;
-
-    font-weight:600;
-}
-.btn-primary{
-    background:linear-gradient(
-        135deg,
-        #f4d29a,
-        #d4a056
+  /* ============================
+     CINEMATIC OVERLAY
+     ============================ */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.65)
     );
+    z-index: 1;
+  }
 
-    color:#111;
-    font-weight:700;
+  /* ============================
+     HERO IMAGES
+     ============================ */
+  .hero-1 {
+    background-image: url("images/hero2.jpg");
+  }
 
-    padding:18px 42px;
+  .hero-2 {
+    background-image: url("images/hero3.jpg");
+  }
 
-    border-radius:999px;
+  /* ============================
+     SECTION BLENDING
+     ============================ */
+  .hero + .hero {
+    margin-top: -80px; /* cinematic overlap */
+  }
 
-    box-shadow:
-    0 10px 30px rgba(212,160,86,.35);
-
-    transition:.35s;
-}
-
-.btn-primary:hover{
-    transform:translateY(-4px);
-    box-shadow:
-    0 18px 45px rgba(212,160,86,.45);
-}
-
-.btn-secondary{
-    background:rgba(255,255,255,.04);
-
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,.18);
-
-    color:white;
-
-    padding:18px 42px;
-
-    border-radius:999px;
-
-    transition:.35s;
-}
-
-.btn-secondary:hover{
-    background:rgba(255,255,255,.10);
-    transform:translateY(-4px);
-}
-<section class="hero-image-break">
-  <img src="images/hero2.jpg" alt="">
-</section>
-
-<section class="hero-image-break">
-  <img src="images/hero3.jpg" alt="">
-</section>
-
-
-/* SECTION TITLES */
-
-.section-title{
-    text-align:center;
-    font-family:"Cormorant Garamond",serif;
-    font-size:4.5rem;
-    color:var(--gold);
-    margin-bottom:15px;
-}
-
-.section-subtitle{
-    text-align:center;
-    color:var(--muted);
-    max-width:700px;
-    margin:0 auto 70px;
-}
-
-/* STORY */
-</section> <!-- end hero -->
-
-<section class="legacy-section">
-
-    <div class="legacy-image">
-        <img src="hero2.jpg" alt="Mother and Daughter">
-    </div>
-
-    <div class="legacy-copy">
-
-        <span class="legacy-kicker">
-            THE STORY BEHIND THE COLLECTION
-        </span>
-
-        <h2>
-            She Didn't Just Raise Me.
-            <br>
-            She Built The Blueprint.
-        </h2>
-
-        <p>
-            This collection was created to honor the women whose wisdom became our foundation.
-        </p>
-
-    </div>
-
-</section>
-.story-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:40px;
-}
-
-.story-card{
-    background:var(--panel);
-    border:var(--border);
-    border-radius:var(--radius);
-    padding:55px;
-}
-
-.story-card h3{
-    font-family:"Cormorant Garamond",serif;
-    font-size:2.7rem;
-    color:var(--gold);
-    margin-bottom:20px;
-}
-
-.story-card p{
-    color:#d0d0d0;
-    line-height:1.9;
-}
-
-/* PRODUCTS */
-
-.collection-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-}
-
-.product-card{
-    background:var(--panel);
-    border:var(--border);
-    border-radius:var(--radius);
-    overflow:hidden;
-    box-shadow:var(--shadow);
-    transition:.4s;
-}
-
-.product-card:hover{
-    transform:translateY(-10px);
-    border-color:var(--gold);
-}
-
-.product-image{
-    height:420px;
-    padding:25px;
-}
- .product-image img{
-    object-fit:contain;
-}  
-    overflow:hidden;
-}
-
-.product-image img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.7s;
-}
-
-.product-image .back{
-    opacity:0;
-}
-
-.product-card:hover .front{
-    opacity:0;
-}
-
-.product-card:hover .back{
-    opacity:1;
-}
-
-.product-info{
-    padding:25px;
-}
-
-.product-info h3{
-    color:var(--gold);
-    margin-bottom:10px;
-}
-
-.product-info p{
-    color:#d0d0d0;
-}
-
-/* QUOTE */
-
-.quote{
-    text-align:center;
-    background:
-    radial-gradient(
-        circle,
-        rgba(212,160,86,.12),
-        transparent 70%
+  .hero-2::before {
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.75),
+      rgba(0,0,0,0.45),
+      transparent
     );
-}
+  }
 
-.quote h2{
-    font-family:"Cormorant Garamond",serif;
-    font-size:5rem;
-    color:var(--gold-light);
-}
+  /* ============================
+     ANIMATIONS
+     ============================ */
+  @keyframes heroFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-/* EMAIL */
-
-.join{
-    text-align:center;
-}
-
-.form{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.form input{
-    background:#111;
-    color:white;
-    border:var(--border);
-    border-radius:999px;
-    padding:18px 24px;
-    min-width:280px;
-}
-
-.form button{
-    border:none;
-    cursor:pointer;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:80px 20px;
-    color:#888;
-    border-top:1px solid rgba(255,255,255,.08);
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-    .story-grid{
-        grid-template-columns:1fr;
+  /* ============================
+     MOBILE RESPONSIVE
+     ============================ */
+  @media (max-width: 768px) {
+    .hero {
+      height: 65vh;
+      padding: 70px 20px;
+      background-attachment: scroll; /* disable parallax on mobile */
     }
 
-    .section-title{
-        font-size:3rem;
+    .hero-content h1 {
+      font-size: 2.4rem;
     }
 
-    .quote h2{
-        font-size:2.8rem;
+    .hero-content p {
+      font-size: 1.15rem;
     }
-
-    .product-image{
-        height:420px;
-    }
-}
-
-@media(max-width:768px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:3.5rem;
-    }
-
-    .hero-content{
-        padding:20px;
-    }
-}
-
+  }
 </style>
-</head>
-<body>
 
-<header>
-<div class="nav">
+<!-- ========================= -->
+<!--        HERO #1            -->
+<!-- ========================= -->
 
-<div class="logo">
-RED FLAGS & RECEIPTS
-</div>
-
-<nav class="nav-links">
-<a href="#story">Story</a>
-<a href="#collection">Collection</a>
-<a href="#join">Join</a>
-</nav>
-
-</div>
-</header>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<div class="hero-kicker">
-SHE RAISED ME RIGHT COLLECTION
-</div>
-
-<h1>
-She Raised Me Right.
-</h1>
-
-<p>
-A tribute to the women who taught us strength, intuition,
-grace, resilience, wisdom, and unconditional love.
-Every lesson became a legacy.
-</p>
 <section class="hero hero-1">
-<div class="hero-content">
-    <h1>Collection</h1>
-   <a href="#collection" class="btn-primary">Shop Collection</a>
-  </div>  <div class="hero-content">
-    <h1>Your headline here</h1>
-    <p>Your subtext here</p>
+  <div class="hero-content">
+    <h1>Red Flags & Receipts</h1>
+    <p>Where the truth gets dressed up and the lies get exposed</p>
   </div>
 </section>
+
+<!-- ========================= -->
+<!--        HERO #2            -->
+<!-- ========================= -->
 
 <section class="hero hero-2">
   <div class="hero-content">
-    <h1>Collection</h1>
-   <a href="#collection" class="btn-primary">Shop Collection</a>
+    <h1>She Raised Me Right</h1>
+    <p>Stories, style, and survival — all in one place</p>
   </div>
 </section>
-
-<div class="hero-buttons">
-
-<a href="#join" class="btn-secondary">Join Waitlist</a>
-</div>
-
-</div>
-.hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, var(--bg));
-  z-index: 3;
-}
-.hero + .hero {
-  margin-top: -40px;
-}
-
-</section>
-
-<section class="hero-image-break">
-<img src="images/hero2.jpg" alt="">
-</section>
-
-<section id="story">
-
-<div class="container">
-
-<h2 class="section-title">
-The Story
-</h2>
-
-<p class="section-subtitle">
-Built from memories. Inspired by motherhood. Created for legacy.
-</p>
-
-<div class="story-grid">
-
-<div class="story-card">
-<h3>Raised Right.</h3>
-<p>
-This collection is a thank-you letter to the women whose wisdom,
-warnings, sacrifices, and strength shaped who we became.
-</p>
-</div>
-
-<div class="story-card">
-<h3>Built On Legacy.</h3>
-<p>
-Luxury apparel, keepsakes, jewelry, and gifts designed to honor
-the women who never stopped believing in us.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="collection">
-
-<div class="container">
-
-<h2 class="section-title">
-The Collection
-</h2>
-
-<p class="section-subtitle">
-Luxury pieces designed to celebrate strength, femininity, and legacy.
-</p>
-
-<div class="collection-grid">
-
-<div class="product-card">
-<div class="product-image">
-<img src="images/crewneck-front.png" class="front">
-<img src="images/whitecrewneck-back.png" class="back">
-</div>
-<div class="product-info">
-<h3>Legacy Crewneck</h3>
-<p>Built from lessons. Worn with pride.</p>
-</div>
-</div>
-
-<div class="product-card">
-<div class="product-image">
-<img src="images/keychain-front.PNG" class="front">
-<img src="images/keychain-back.PNG" class="back">
-</div>
-<div class="product-info">
-<h3>Legacy Keychain</h3>
-<p>Carry her wisdom everywhere.</p>
-</div>
-</div>
-
-<div class="product-card">
-<div class="product-image">
-<img src="images/pendant-front.PNG" class="front">
-<img src="images/pendant-back.PNG" class="back">
-</div>
-<div class="product-info">
-<h3>Legacy Pendant</h3>
-<p>A keepsake that lasts forever.</p>
-</div>
-</div>
-
-<div class="product-card">
-<div class="product-image">
-<img src="images/tribute-front.PNG" class="front">
-<img src="images/tribute-back.PNG" class="back">
-</div>
-<div class="product-info">
-<h3>Tribute Collection</h3>
-<p>Designed in her honor.</p>
-</div>
-</div>
-
-<div class="product-card">
-<div class="product-image">
-<img src="images/wineglass-front (3).PNG" class="front">
-<img src="images/wineglass-back.PNG" class="back">
-</div>
-<div class="product-info">
-<h3>Legacy Wine Glass</h3>
-<p>Raise a glass to the women who raised us.</p>
-</div>
-</div>
-
-<div class="product-card">
-<div class="product-image">
-<img src="images/tenlessons-front.jpg" class="front">
-<img src="images/tenlessons-front.jpg" class="back">
-</div>
-<div class="product-info">
-<h3>Ten Lessons Print</h3>
-<p>Wisdom worth passing down.</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="quote">
-
-<div class="container">
-
-<h2>
-“She didn't just raise me.<br>
-She built the blueprint.”
-</h2>
-
-</div>
-
-</section>
-
-<section id="join" class="join">
-
-<div class="container">
-
-<h2 class="section-title">
-Join The Movement
-</h2>
-
-<p class="section-subtitle">
-Be first to hear about launches, exclusive releases, and new collections.
-</p>
-
-<form
-class="form"
-action="https://formspree.io/f/xdkekagr"
-method="POST">
-
-<input
-type="text"
-name="name"
-placeholder="Your Name">
-
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required>
-
-<button class="btn-primary">
-JOIN THE LIST
-</button>
-
-</form>
-
-</div>
-
-</section>
-.footer-secret{
-    margin-top:30px;
-}
-
-
-<footer>
-    <div class="footer-secret">
-    <a href="#" onclick="openLetter(); return false;">
-        For Mom
-    </a>
-</div>
-© 2026 Red Flags & Receipts. All Rights Reserved.
-</footer>
-.letter-box{
-    background:
-    linear-gradient(
-        rgba(0,0,0,.85),
-        rgba(0,0,0,.85)
-    ),
-    url('hero2.jpg');
-    background-size:cover;
-    background-position:center;
-}
-
-    <footer>
-
-<a class="mom-link" onclick="openLetter()">
-For Mom
-</a>
-
-</footer>
-    <script>
-
-const launchDate =
-new Date("2026-08-19T06:00:00-04:00").getTime();
-
-function updateCountdown(){
-
-    const now = new Date().getTime();
-
-    const distance =
-    launchDate - now;
-
-    document.getElementById("days").textContent =
-    Math.floor(distance / 86400000);
-
-    document.getElementById("hours").textContent =
-    Math.floor((distance % 86400000) / 3600000);
-
-    document.getElementById("minutes").textContent =
-    Math.floor((distance % 3600000) / 60000);
-
-    document.getElementById("seconds").textContent =
-    Math.floor((distance % 60000) / 1000);
-}
-
-updateCountdown();
-setInterval(updateCountdown,1000);
-
-</script>
-</body>
-</html>
-```
