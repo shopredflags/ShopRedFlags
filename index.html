@@ -1,146 +1,89 @@
-<!-- ========================================= -->
-<!--   RED FLAGS & RECEIPTS — HERO SYSTEM      -->
-<!--   Cinematic Editorial Banner Sections     -->
-<!--   Parallax + Fade + Text Reveal           -->
-<!-- ========================================= -->
-
-<style>
-  /* ============================
-     BASE HERO LAYOUT
-     ============================ */
-  .hero {
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* PARALLAX */
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 100px 20px;
-    color: white;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  /* ============================
-     TEXT OVERLAY
-     ============================ */
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 780px;
-    font-family: "Inter", sans-serif;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: heroFadeUp 1.4s ease-out forwards;
-  }
-
-  .hero-content h1 {
-    font-size: 3.4rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-  }
-
-  .hero-content p {
-    font-size: 1.3rem;
-    font-weight: 400;
-    opacity: 0.9;
-  }
-
-  /* ============================
-     CINEMATIC OVERLAY
-     ============================ */
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.15),
-      rgba(0,0,0,0.65)
-    );
-    z-index: 1;
-  }
-
-  /* ============================
-     HERO IMAGES
-     ============================ */
-  .hero-1 {
-    background-image: url("images/hero2.jpg");
-  }
-
-  .hero-2 {
-    background-image: url("images/hero3.jpg");
-  }
-
-  /* ============================
-     SECTION BLENDING
-     ============================ */
-  .hero + .hero {
-    margin-top: -80px; /* cinematic overlap */
-  }
-
-  .hero-2::before {
-    background: linear-gradient(
-      to top,
-      rgba(0,0,0,0.75),
-      rgba(0,0,0,0.45),
-      transparent
-    );
-  }
-
-  /* ============================
-     ANIMATIONS
-     ============================ */
-  @keyframes heroFadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* ============================
-     MOBILE RESPONSIVE
-     ============================ */
-  @media (max-width: 768px) {
-    .hero {
-      height: 65vh;
-      padding: 70px 20px;
-      background-attachment: scroll; /* disable parallax on mobile */
-    }
-
-    .hero-content h1 {
-      font-size: 2.4rem;
-    }
-
-    .hero-content p {
-      font-size: 1.15rem;
-    }
-  }
-</style>
-
-<!-- ========================= -->
-<!--        HERO #1            -->
-<!-- ========================= -->
-
-<section class="hero hero-1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Receipts Room | Red Flags & Receipts</title>
+<meta name="description" content="Choose who you need right now: Em, Emma, Miss Path, or Mr. Goodson.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>Red Flags & Receipts</h1>
-    <p>Where the truth gets dressed up and the lies get exposed</p>
+    <p class="eyebrow">RED FLAGS & RECEIPTS PRESENTS</p>
+    <h1>The Receipts Room</h1>
+    <p class="intro">Four perspectives. Your receipts. Your call.</p>
+    <a class="enter-btn" href="#choose">WHO DO YOU NEED RIGHT NOW?</a>
   </div>
 </section>
 
-<!-- ========================= -->
-<!--        HERO #2            -->
-<!-- ========================= -->
+<section class="choose" id="choose">
+  <div class="section-heading">
+    <p class="eyebrow">CHOOSE YOUR PERSON</p>
+    <h2>Who do you need right now?</h2>
+    <p>Pick a personality based on what you need—not what you think you should need.</p>
+  </div>
 
-<section class="hero hero-2">
-  <div class="hero-content">
-    <h1>She Raised Me Right</h1>
-    <p>Stories, style, and survival — all in one place</p>
+  <div class="character-grid">
+    <article class="character-card">
+      <div class="card-number">01</div><div class="avatar">E</div>
+      <p class="role">THE BEST FRIEND</p><h3>Em</h3>
+      <p class="tagline">“Tell me everything.”</p>
+      <p class="description">Quick, funny, perceptive and slightly savage when the moment deserves it. Em separates facts from feelings and helps you figure out what actually happened.</p>
+      <div class="best-for"><span>BEST FOR</span>texts, dating drama, mixed signals, quick perspective</div>
+      <button class="talk-btn" data-character="Em">TALK TO EM</button>
+    </article>
+
+    <article class="character-card">
+      <div class="card-number">02</div><div class="avatar">EA</div>
+      <p class="role">THE EDITOR</p><h3>Emma</h3>
+      <p class="tagline">“Let’s find what fits.”</p>
+      <p class="description">Polished, feminine and discerning. Emma is the one you ask when you want the right piece, the right gift, or the right way to pull the whole thing together.</p>
+      <div class="best-for"><span>BEST FOR</span>shopping, styling, gifts, bundles, what-to-wear</div>
+      <button class="talk-btn" data-character="Emma">TALK TO EMMA</button>
+    </article>
+
+    <article class="character-card">
+      <div class="card-number">03</div><div class="avatar">MP</div>
+      <p class="role">THE GUIDE</p><h3>Miss Path</h3>
+      <p class="tagline">“Let’s find your direction.”</p>
+      <p class="description">Calm, wise and a little mysterious. Miss Path helps you slow things down, notice what keeps repeating, and decide what you want to do next.</p>
+      <div class="best-for"><span>BEST FOR</span>reflection, journaling, boundaries, life direction</div>
+      <button class="talk-btn" data-character="Miss Path">TALK TO MISS PATH</button>
+    </article>
+
+    <article class="character-card">
+      <div class="card-number">04</div><div class="avatar">MG</div>
+      <p class="role">THE ANALYST</p><h3>Mr. Goodson</h3>
+      <p class="tagline">“Show me the receipts.”</p>
+      <p class="description">Controlled, observant and dryly funny. Mr. Goodson is less interested in promises than patterns. He looks at what was said, what happened next, and what the evidence actually shows.</p>
+      <div class="best-for"><span>BEST FOR</span>patterns, contradictions, manipulation, behavior analysis</div>
+      <button class="talk-btn" data-character="Mr. Goodson">TALK TO MR. GOODSON</button>
+    </article>
   </div>
 </section>
+
+<section class="handoff">
+  <p class="eyebrow">NO PRESSURE. NO PERFORMANCE.</p>
+  <h2>You can switch rooms anytime.</h2>
+  <p>Start with Em. Hand the receipts to Mr. Goodson. Ask Miss Path what it means for you. Let Emma rescue the outfit afterward.</p>
+  <p class="small">They help first. Products only come up when they actually fit the conversation.</p>
+</section>
+</main>
+
+<div class="modal" id="characterModal" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <div class="modal-card">
+    <button class="close" aria-label="Close">×</button>
+    <p class="eyebrow">THE RECEIPTS ROOM</p>
+    <h2 id="modalTitle"></h2>
+    <p id="modalCopy"></p>
+    <button class="primary" id="startChat">ENTER THE ROOM</button>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
