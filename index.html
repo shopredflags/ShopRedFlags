@@ -3,432 +3,630 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Red Flags & Receipts — The Drop Is Coming</title>
-
-  <meta
-    name="description"
-    content="Red Flags & Receipts is more than a store. Fashion, publishing, digital products, community, services and a whole damn company in the making."
-  />
+  <title>RFR — New Moon. New Era.</title>
 
   <style>
-    :root {
-      --black: #050505;
-      --black-soft: #0d0d0d;
-      --red: #b30018;
-      --red-bright: #e00024;
-      --gold: #c8a45b;
-      --cream: #f4efe6;
-      --white: #ffffff;
-      --gray: #aaa;
+    :root{
+      --black:#050505;
+      --black-2:#0b0b0b;
+      --red:#b41218;
+      --red-bright:#d51d25;
+      --gold:#c89b3c;
+      --gold-soft:#e5c071;
+      --white:#f4f1ea;
+      --muted:#a9a5a0;
+      --border:rgba(200,155,60,.45);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
     }
 
-    html {
-      scroll-behavior: smooth;
+    html{
+      scroll-behavior:smooth;
     }
 
-    body {
-      background: var(--black);
-      color: var(--cream);
-      font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
+    body{
+      background:
+        radial-gradient(circle at 70% 20%, rgba(180,18,24,.10), transparent 32%),
+        radial-gradient(circle at 20% 70%, rgba(200,155,60,.05), transparent 30%),
+        #050505;
+      color:var(--white);
+      font-family:Arial, Helvetica, sans-serif;
+      overflow-x:hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
-    .gold-line {
-      width: 70px;
-      height: 2px;
-      background: var(--gold);
-      margin: 24px auto;
+    button,
+    input{
+      font:inherit;
+    }
+
+    /* NAV */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:999;
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 4vw;
+      background:rgba(2,2,2,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .brand{
+      display:flex;
+      align-items:flex-end;
+      gap:10px;
+    }
+
+    .brand-mark{
+      font-family:Georgia, serif;
+      font-size:42px;
+      line-height:.9;
+      color:var(--red-bright);
+      letter-spacing:2px;
+    }
+
+    .brand-sub{
+      font-size:9px;
+      letter-spacing:3px;
+      color:#d7d2cb;
+      padding-bottom:3px;
+    }
+
+    .gold-flag{
+      font-size:25px;
+      color:var(--gold);
+      transform:rotate(-8deg);
+      display:inline-block;
+      margin-left:4px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:32px;
+      align-items:center;
+      font-size:12px;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+    }
+
+    .nav-links a{
+      opacity:.88;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold-soft);
     }
 
     /* HERO */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 80px 24px;
-      text-align: center;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(200,164,91,.25);
+    .hero{
+      min-height:calc(100vh - 78px);
+      position:relative;
+      padding:55px 5vw 45px;
+      display:grid;
+      grid-template-columns:1fr 2fr;
+      gap:50px;
+      align-items:center;
+      overflow:hidden;
     }
 
-    .hero::before {
-      content: "RED FLAGS";
-      position: absolute;
-      top: 3%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: clamp(80px, 18vw, 280px);
-      font-weight: 900;
-      letter-spacing: -8px;
-      color: rgba(179,0,24,.08);
-      white-space: nowrap;
-      z-index: 0;
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:.35;
+      background-image:
+        radial-gradient(circle at 10% 20%, #fff 0 1px, transparent 1.5px),
+        radial-gradient(circle at 70% 35%, #fff 0 1px, transparent 1.5px),
+        radial-gradient(circle at 40% 80%, #fff 0 1px, transparent 1.5px),
+        radial-gradient(circle at 90% 65%, #fff 0 1px, transparent 1.5px);
+      background-size:190px 160px, 260px 220px, 240px 180px, 300px 210px;
     }
 
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 1050px;
+    .hero-left,
+    .hero-right{
+      position:relative;
+      z-index:2;
     }
 
-    .eyebrow {
-      color: var(--gold);
-      font-size: 13px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      margin-bottom: 26px;
-      font-weight: 700;
+    .eyebrow{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:5px;
+      font-size:14px;
+      margin-bottom:14px;
     }
 
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(52px, 8vw, 120px);
-      line-height: .88;
-      text-transform: uppercase;
-      letter-spacing: -3px;
-      color: var(--white);
+    .headline{
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(52px,7vw,102px);
+      line-height:.92;
+      font-weight:400;
+      text-transform:uppercase;
     }
 
-    h1 span {
-      color: var(--red-bright);
+    .headline .gold{
+      color:var(--gold-soft);
     }
 
-    .hero-sub {
-      max-width: 780px;
-      margin: 32px auto 0;
-      font-size: clamp(19px, 2.2vw, 30px);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.4;
+    .headline .red{
+      color:var(--red-bright);
     }
 
-    .hero-small {
-      max-width: 700px;
-      margin: 20px auto 0;
-      color: #bbb;
-      font-size: 16px;
-      line-height: 1.8;
+    .launch-date{
+      margin:26px 0 12px;
+      font-family:Georgia, serif;
+      font-size:25px;
+      letter-spacing:2px;
     }
 
-    .cta {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 18px 34px;
-      border: 1px solid var(--gold);
-      background: transparent;
-      color: var(--white);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      font-weight: 700;
-      transition: .3s ease;
+    .launch-time{
+      color:var(--gold-soft);
+      letter-spacing:4px;
+      font-size:15px;
+      margin-bottom:22px;
     }
 
-    .cta:hover {
-      background: var(--red);
-      border-color: var(--red);
-      transform: translateY(-2px);
+    .hero-copy{
+      color:#ddd8d0;
+      line-height:1.7;
+      max-width:440px;
+      font-size:16px;
     }
 
-    /* SECTIONS */
-
-    .section {
-      position: relative;
-      padding: 110px 24px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      overflow: hidden;
+    .hero-button{
+      margin-top:28px;
+      display:inline-block;
+      border:1px solid var(--gold);
+      padding:17px 34px;
+      text-transform:uppercase;
+      letter-spacing:3px;
+      color:var(--gold-soft);
+      transition:.3s ease;
     }
 
-    .inner {
-      width: min(1100px, 100%);
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
+    .hero-button:hover{
+      background:var(--gold);
+      color:#000;
     }
 
-    .section-number {
-      position: absolute;
-      right: 4%;
-      top: 20px;
-      font-family: Georgia, serif;
-      font-size: clamp(110px, 18vw, 260px);
-      color: rgba(179,0,24,.11);
-      line-height: 1;
-      font-weight: 700;
-      z-index: 0;
+    /* MOON TIMELINE */
+    .moon-title{
+      text-align:center;
+      color:var(--gold);
+      letter-spacing:5px;
+      font-size:16px;
+      margin-bottom:25px;
+      text-transform:uppercase;
     }
 
-    .label {
-      color: var(--gold);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 18px;
+    .moon-row{
+      display:grid;
+      grid-template-columns:repeat(8,1fr);
+      gap:10px;
+      align-items:start;
     }
 
-    h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(40px, 5.4vw, 76px);
-      line-height: 1;
-      color: var(--white);
-      max-width: 880px;
-      margin-bottom: 30px;
+    .moon-item{
+      text-align:center;
+      font-size:10px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:#cfcac2;
     }
 
-    h2 .red {
-      color: var(--red-bright);
-    }
-
-    .lead {
-      font-family: Georgia, serif;
-      font-size: clamp(21px, 2.4vw, 31px);
-      line-height: 1.5;
-      max-width: 850px;
-      margin-bottom: 28px;
-    }
-
-    .copy {
-      max-width: 800px;
-      font-size: 17px;
-      line-height: 1.85;
-      color: #c6c6c6;
-    }
-
-    /* TAG GRID */
-
-    .tag-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 45px;
-    }
-
-    .tag {
-      border: 1px solid rgba(200,164,91,.35);
-      min-height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 18px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 12px;
-      font-weight: 700;
-      transition: .3s ease;
-      background: rgba(255,255,255,.015);
-    }
-
-    .tag:hover {
-      border-color: var(--red-bright);
-      background: rgba(179,0,24,.12);
-      transform: translateY(-3px);
-    }
-
-    /* FEATURE BLOCK */
-
-    .dark-red {
+    .moon{
+      width:82px;
+      height:82px;
+      border-radius:50%;
+      margin:0 auto 12px;
+      position:relative;
+      overflow:hidden;
       background:
-        linear-gradient(135deg, rgba(179,0,24,.15), transparent 60%),
-        var(--black-soft);
+        radial-gradient(circle at 45% 40%, #dad5cb 0 2%, transparent 3%),
+        radial-gradient(circle at 70% 55%, rgba(0,0,0,.18) 0 7%, transparent 8%),
+        radial-gradient(circle at 35% 70%, rgba(0,0,0,.18) 0 6%, transparent 7%),
+        #c8c1b5;
+      box-shadow:0 0 18px rgba(255,255,255,.09);
     }
 
-    .quote-section {
-      background: var(--red);
-      color: white;
-      text-align: center;
-      padding: 110px 24px;
+    .moon::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:50%;
+      background:#050505;
     }
 
-    .quote-section blockquote {
-      max-width: 1100px;
-      margin: 0 auto;
-      font-family: Georgia, serif;
-      font-size: clamp(36px, 6vw, 88px);
-      line-height: 1;
-      font-weight: 700;
-      text-transform: uppercase;
+    .waxing-crescent::after{
+      transform:translateX(-23px);
+      box-shadow:26px 0 0 0 #050505;
     }
 
-    /* RESUME */
-
-    .resume-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      margin-top: 45px;
-      border-top: 1px solid rgba(200,164,91,.3);
-      border-left: 1px solid rgba(200,164,91,.3);
+    .first-quarter::after{
+      transform:translateX(-41px);
     }
 
-    .resume-item {
-      padding: 24px;
-      border-right: 1px solid rgba(200,164,91,.3);
-      border-bottom: 1px solid rgba(200,164,91,.3);
-      font-family: Georgia, serif;
-      font-size: 18px;
-      transition: .25s ease;
+    .waxing-gibbous::after{
+      transform:translateX(-64px);
     }
 
-    .resume-item:hover {
-      background: var(--red);
-      color: white;
+    .full::after{
+      display:none;
     }
 
-    /* FINAL */
-
-    .final {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 24px;
-      position: relative;
+    .waning-gibbous::after{
+      transform:translateX(64px);
     }
 
-    .final-inner {
-      max-width: 950px;
+    .third-quarter::after{
+      transform:translateX(41px);
     }
 
-    .final h2 {
-      margin: 0 auto;
-      font-size: clamp(55px, 9vw, 120px);
+    .waning-crescent::after{
+      transform:translateX(23px);
     }
 
-    .final-copy {
-      max-width: 700px;
-      margin: 30px auto 0;
-      color: #bbb;
-      font-size: 18px;
-      line-height: 1.8;
+    .new-moon{
+      background:#090909;
+      border:1px solid var(--red-bright);
+      box-shadow:
+        0 0 22px rgba(213,29,37,.45),
+        inset 0 0 14px rgba(255,255,255,.03);
     }
 
-    .email-form {
-      display: flex;
-      max-width: 600px;
-      margin: 42px auto 0;
-      border: 1px solid var(--gold);
+    .new-moon::after{
+      display:none;
     }
 
-    .email-form input {
-      flex: 1;
-      border: 0;
-      outline: 0;
-      padding: 18px;
-      background: transparent;
-      color: white;
-      font-size: 15px;
-      min-width: 0;
+    .moon-label{
+      min-height:29px;
     }
 
-    .email-form input::placeholder {
-      color: #777;
+    .moon-date{
+      margin-top:5px;
+      color:#999;
     }
 
-    .email-form button {
-      border: 0;
-      cursor: pointer;
-      padding: 18px 26px;
-      background: var(--red);
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-      font-size: 11px;
+    .new-label{
+      color:var(--red-bright);
     }
 
-    .email-form button:hover {
-      background: var(--red-bright);
+    /* COUNTDOWN */
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      margin-top:34px;
+      max-width:760px;
+      margin-left:auto;
+      margin-right:auto;
     }
 
-    #formMessage {
-      margin-top: 16px;
-      font-size: 14px;
-      color: var(--gold);
-      min-height: 20px;
+    .time-box{
+      text-align:center;
+      border-right:1px solid rgba(255,255,255,.18);
+      padding:0 20px;
     }
 
-    footer {
-      border-top: 1px solid rgba(200,164,91,.25);
-      padding: 40px 24px;
-      text-align: center;
-      color: #777;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+    .time-box:last-child{
+      border-right:none;
     }
 
-    /* REVEAL */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity .8s ease, transform .8s ease;
+    .time-number{
+      font-family:Georgia, serif;
+      color:var(--red-bright);
+      font-size:65px;
+      line-height:1;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .time-label{
+      margin-top:10px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-size:11px;
+      color:#ddd;
     }
 
-    /* MOBILE */
+    /* ALERT */
+    .alert-panel{
+      position:relative;
+      z-index:2;
+      width:min(980px,90vw);
+      margin:-12px auto 45px;
+      border:1px solid var(--border);
+      background:linear-gradient(120deg,#0b0b0b,#111);
+      padding:26px 28px;
+      display:grid;
+      grid-template-columns:1fr 1.2fr;
+      align-items:center;
+      gap:25px;
+      box-shadow:0 16px 60px rgba(0,0,0,.45);
+    }
 
-    @media (max-width: 850px) {
-      .tag-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .alert-title{
+      font-family:Georgia, serif;
+      font-size:22px;
+      letter-spacing:1px;
+      margin-bottom:5px;
+    }
+
+    .alert-copy{
+      color:#bbb6af;
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .email-form{
+      display:flex;
+      width:100%;
+    }
+
+    .email-form input{
+      flex:1;
+      background:#111;
+      border:1px solid rgba(255,255,255,.22);
+      color:#fff;
+      padding:15px 16px;
+      outline:none;
+    }
+
+    .email-form input:focus{
+      border-color:var(--gold);
+    }
+
+    .email-form button{
+      border:none;
+      background:var(--red);
+      color:white;
+      padding:15px 27px;
+      cursor:pointer;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      transition:.25s;
+    }
+
+    .email-form button:hover{
+      background:var(--red-bright);
+    }
+
+    .form-note{
+      font-size:10px;
+      color:#777;
+      margin-top:8px;
+    }
+
+    .form-success{
+      margin-top:10px;
+      font-size:12px;
+      color:var(--gold-soft);
+      display:none;
+    }
+
+    /* PHASE DROPS */
+    .phases{
+      padding:28px 5vw 70px;
+    }
+
+    .section-script{
+      text-align:center;
+      color:var(--red-bright);
+      font-family:Georgia, serif;
+      font-style:italic;
+      font-size:26px;
+      letter-spacing:2px;
+      margin-bottom:28px;
+    }
+
+    .phase-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .phase-card{
+      border:1px solid var(--border);
+      background:#0a0a0a;
+      position:relative;
+      overflow:hidden;
+      min-height:370px;
+      display:flex;
+      flex-direction:column;
+      transition:.3s ease;
+    }
+
+    .phase-card:hover{
+      transform:translateY(-5px);
+      border-color:var(--gold);
+    }
+
+    .phase-badge{
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:4;
+      background:var(--red);
+      padding:8px 14px;
+      font-size:10px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    .phase-image{
+      height:205px;
+      background:
+        linear-gradient(to bottom,rgba(0,0,0,.1),rgba(0,0,0,.8)),
+        radial-gradient(circle at 50% 40%,rgba(180,18,24,.35),transparent 30%),
+        linear-gradient(135deg,#1a1a1a,#070707);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:65px;
+      color:var(--gold-soft);
+    }
+
+    .phase-body{
+      padding:20px;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      flex:1;
+    }
+
+    .phase-title{
+      font-family:Georgia, serif;
+      font-size:22px;
+      margin-bottom:9px;
+    }
+
+    .phase-copy{
+      color:#aaa59e;
+      font-size:13px;
+      line-height:1.5;
+      flex:1;
+    }
+
+    .phase-status{
+      border:1px solid var(--gold);
+      color:var(--gold-soft);
+      padding:9px 12px;
+      margin-top:18px;
+      font-size:10px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+    }
+
+    /* VALUES */
+    .values{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:30px 5vw;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .value{
+      text-align:center;
+      color:#ddd;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:12px;
+      line-height:1.7;
+    }
+
+    .value span{
+      color:var(--gold);
+      display:block;
+      font-size:26px;
+      margin-bottom:7px;
+    }
+
+    /* FOOTER QUOTE */
+    .footer-quote{
+      background:
+        linear-gradient(rgba(95,0,0,.60),rgba(10,0,0,.88)),
+        #3d0000;
+      padding:30px 6vw;
+      text-align:center;
+      font-family:Georgia, serif;
+      font-style:italic;
+      font-size:21px;
+      color:var(--gold-soft);
+      letter-spacing:1px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1000px){
+      .nav-links{
+        display:none;
       }
 
-      .resume-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
       }
 
-      .section {
-        padding: 85px 22px;
+      .hero-copy{
+        margin:auto;
+      }
+
+      .moon-row{
+        grid-template-columns:repeat(4,1fr);
+        row-gap:30px;
+      }
+
+      .phase-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .alert-panel{
+        grid-template-columns:1fr;
+        text-align:center;
       }
     }
 
-    @media (max-width: 540px) {
-      .tag-grid,
-      .resume-grid {
-        grid-template-columns: 1fr;
+    @media(max-width:640px){
+      .nav{
+        height:68px;
       }
 
-      h1 {
-        letter-spacing: -1px;
+      .brand-mark{
+        font-size:34px;
       }
 
-      .email-form {
-        flex-direction: column;
-        border: none;
-        gap: 10px;
+      .hero{
+        padding-top:38px;
       }
 
-      .email-form input {
-        border: 1px solid var(--gold);
+      .moon{
+        width:60px;
+        height:60px;
       }
 
-      .email-form button {
-        width: 100%;
+      .moon-row{
+        grid-template-columns:repeat(2,1fr);
       }
 
-      .hero::before {
-        letter-spacing: -4px;
+      .countdown{
+        grid-template-columns:repeat(2,1fr);
+        gap:22px 0;
+      }
+
+      .time-box:nth-child(2){
+        border-right:none;
+      }
+
+      .time-number{
+        font-size:48px;
+      }
+
+      .alert-panel{
+        margin-top:10px;
+      }
+
+      .email-form{
+        flex-direction:column;
+        gap:9px;
+      }
+
+      .phase-grid{
+        grid-template-columns:1fr;
+      }
+
+      .values{
+        grid-template-columns:1fr 1fr;
       }
     }
   </style>
@@ -436,471 +634,430 @@
 
 <body>
 
-  <!-- HERO -->
-
-  <section class="hero">
-    <div class="hero-inner reveal">
-      <div class="eyebrow">Red Flags & Receipts</div>
-
-      <h1>
-        The Drop<br>
-        Is <span>Coming.</span>
-      </h1>
-
-      <div class="gold-line"></div>
-
-      <p class="hero-sub">
-        Turns out, building an entire company takes a little longer
-        than setting a countdown.
-      </p>
-
-      <p class="hero-small">
-        I thought I was launching a website.
-        Then I accidentally built a fashion brand, a publishing arm,
-        a digital library, a community, a service business and an entire
-        ecosystem around it.
-      </p>
-
-      <a href="#what-i-built" class="cta">See What I've Been Building</a>
+<header class="nav">
+  <div class="brand">
+    <div>
+      <div class="brand-mark">
+        RFR <span class="gold-flag">⚑</span>
+      </div>
+      <div class="brand-sub">RED FLAGS & RECEIPTS</div>
     </div>
-  </section>
+  </div>
+
+  <nav class="nav-links">
+    <a href="#shop">Shop</a>
+    <a href="#journal">Journal</a>
+    <a href="#receipts">Receipts Room</a>
+    <a href="#society">Red Flag Society</a>
+    <a href="#coaching">Coaching</a>
+    <a href="#about">About</a>
+    <a href="#foundation">Foundation</a>
+  </nav>
+</header>
 
 
-  <!-- INTRO -->
+<section class="hero">
 
-  <section class="section dark-red" id="what-i-built">
-    <div class="section-number">01</div>
+  <div class="hero-left">
+    <div class="eyebrow">The next chapter begins</div>
 
-    <div class="inner reveal">
-      <div class="label">The Reality</div>
+    <h1 class="headline">
+      <span class="gold">New Moon.</span><br>
+      <span class="red">New Era.</span>
+    </h1>
 
-      <h2>
-        I wasn't building a website.
-        <span class="red">I was building a company.</span>
-      </h2>
+    <div class="launch-date">SEPTEMBER 10, 2026</div>
+    <div class="launch-time">20:27 PM PT</div>
 
-      <p class="lead">
-        And I underestimated just how many jobs are hiding behind the words
-        “launch an e-commerce brand.”
-      </p>
+    <p class="hero-copy">
+      A new beginning. A new standard.
+      Built from truth. Powered by receipts.
+      We’re not dropping everything at once —
+      we’re revealing RFR phase by phase.
+    </p>
 
-      <p class="copy">
-        The original countdown was simple. The work behind it wasn't.
-        Every collection, page, product, image, piece of copy, digital
-        product, customer journey and business decision had to become part
-        of one coherent world.
-      </p>
+    <a href="#phases" class="hero-button">The Drop Is Coming</a>
+  </div>
+
+
+  <div class="hero-right">
+
+    <div class="moon-title">The Journey to Launch</div>
+
+    <div class="moon-row">
+
+      <div class="moon-item">
+        <div class="moon waxing-crescent"></div>
+        <div class="moon-label">Waxing Crescent</div>
+        <div class="moon-date">Aug 30</div>
+      </div>
+
+      <div class="moon-item">
+        <div class="moon first-quarter"></div>
+        <div class="moon-label">First Quarter</div>
+        <div class="moon-date">Sep 1</div>
+      </div>
+
+      <div class="moon-item">
+        <div class="moon waxing-gibbous"></div>
+        <div class="moon-label">Waxing Gibbous</div>
+        <div class="moon-date">Sep 3</div>
+      </div>
+
+      <div class="moon-item">
+        <div class="moon full"></div>
+        <div class="moon-label">Full Moon</div>
+        <div class="moon-date">Sep 5</div>
+      </div>
+
+      <div class="moon-item">
+        <div class="moon waning-gibbous"></div>
+        <div class="moon-label">Waning Gibbous</div>
+        <div class="moon-date">Sep 7</div>
+      </div>
+
+      <div class="moon-item">
+        <div class="moon third-quarter"></div>
+        <div class="moon-label">Third Quarter</div>
+        <div class="moon-date">Sep 8</div>
+      </div>
+
+      <div class="moon-item">
+        <div class="moon waning-crescent"></div>
+        <div class="moon-label">Waning Crescent</div>
+        <div class="moon-date">Sep 9</div>
+      </div>
+
+      <div class="moon-item new-label">
+        <div class="moon new-moon"></div>
+        <div class="moon-label">New Moon</div>
+        <div class="moon-date">Sep 10</div>
+      </div>
+
     </div>
-  </section>
 
 
-  <!-- BRAND -->
+    <div class="countdown">
+      <div class="time-box">
+        <div class="time-number" id="days">00</div>
+        <div class="time-label">Days</div>
+      </div>
 
-  <section class="section">
-    <div class="section-number">02</div>
+      <div class="time-box">
+        <div class="time-number" id="hours">00</div>
+        <div class="time-label">Hours</div>
+      </div>
 
-    <div class="inner reveal">
-      <div class="label">Brand Building</div>
+      <div class="time-box">
+        <div class="time-number" id="minutes">00</div>
+        <div class="time-label">Minutes</div>
+      </div>
 
-      <h2>I built the <span class="red">brand.</span></h2>
-
-      <p class="lead">
-        Not just a logo. A point of view.
-      </p>
-
-      <div class="tag-grid">
-        <div class="tag">Brand Strategy</div>
-        <div class="tag">Visual Identity</div>
-        <div class="tag">Creative Direction</div>
-        <div class="tag">Brand Voice</div>
-        <div class="tag">Campaign Concepts</div>
-        <div class="tag">Collection Strategy</div>
-        <div class="tag">Customer Experience</div>
-        <div class="tag">Editorial Direction</div>
+      <div class="time-box">
+        <div class="time-number" id="seconds">00</div>
+        <div class="time-label">Seconds</div>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
 
 
-  <!-- ECOM -->
+<section class="alert-panel">
 
-  <section class="section dark-red">
-    <div class="section-number">03</div>
+  <div>
+    <div class="alert-title">
+      ✉ DON’T MISS THE NEXT PHASE.
+    </div>
 
-    <div class="inner reveal">
-      <div class="label">Commerce</div>
+    <div class="alert-copy">
+      Enter your email to be alerted as we drop new parts of the site,
+      exclusive content, products, resources and launch updates.
+    </div>
+  </div>
 
-      <h2>
-        Then I built the
-        <span class="red">store.</span>
-      </h2>
 
-      <p class="lead">
-        Which is really about 40 different jobs wearing one trench coat.
-      </p>
+  <!--
+    IMPORTANT:
+    This form visually works now.
 
-      <div class="tag-grid">
-        <div class="tag">Product Concepts</div>
-        <div class="tag">Apparel</div>
-        <div class="tag">Accessories</div>
-        <div class="tag">Home Goods</div>
-        <div class="tag">Pricing</div>
-        <div class="tag">Merchandising</div>
-        <div class="tag">Product Photography</div>
-        <div class="tag">Product Descriptions</div>
-        <div class="tag">Collections</div>
-        <div class="tag">Product Pages</div>
-        <div class="tag">Mobile Layouts</div>
-        <div class="tag">Checkout Flow</div>
-        <div class="tag">Wix</div>
-        <div class="tag">Shopify</div>
-        <div class="tag">Vercel</div>
-        <div class="tag">Optimization</div>
+    To actually collect email addresses, connect this to:
+    Wix Forms / Wix Contacts / Mailchimp / Klaviyo / ConvertKit.
+  -->
+
+  <div>
+    <form class="email-form" id="alertForm">
+
+      <input
+        type="email"
+        id="email"
+        placeholder="ENTER YOUR EMAIL"
+        required
+      />
+
+      <button type="submit">
+        Alert Me
+      </button>
+
+    </form>
+
+    <div class="form-note">
+      🔒 No spam. Unsubscribe anytime.
+    </div>
+
+    <div class="form-success" id="successMessage">
+      You're on the list. Watch the moon. Watch this space.
+    </div>
+  </div>
+
+</section>
+
+
+<section class="phases" id="phases">
+
+  <div class="section-script">
+    We’re building something real. We’re dropping it in phases.
+  </div>
+
+  <div class="phase-grid">
+
+    <article class="phase-card" id="shop">
+      <div class="phase-badge">Phase 1</div>
+
+      <div class="phase-image">
+        ⚑
       </div>
-    </div>
-  </section>
 
+      <div class="phase-body">
+        <div class="phase-title">
+          Shop Drops
+        </div>
 
-  <!-- PUBLISHING -->
+        <div class="phase-copy">
+          Signature pieces. Limited releases.
+          Apparel, accessories, digital products
+          and the pieces that started the movement.
+        </div>
 
-  <section class="section">
-    <div class="section-number">04</div>
-
-    <div class="inner reveal">
-      <div class="label">Publishing</div>
-
-      <h2>
-        Apparently clothes weren't
-        <span class="red">enough.</span>
-      </h2>
-
-      <p class="lead">
-        So I started building a publishing company too.
-      </p>
-
-      <p class="copy">
-        Original ebooks. Journals. Workbooks. Crosswords. Games.
-        Relationship resources. Printables. Digital downloads.
-        Intellectual property designed to live inside the larger
-        Red Flags & Receipts universe.
-      </p>
-
-      <div class="tag-grid">
-        <div class="tag">Ebooks</div>
-        <div class="tag">Journals</div>
-        <div class="tag">Workbooks</div>
-        <div class="tag">Crosswords</div>
-        <div class="tag">Games</div>
-        <div class="tag">Printables</div>
-        <div class="tag">Digital Library</div>
-        <div class="tag">Original IP</div>
+        <div class="phase-status">
+          Live Soon
+        </div>
       </div>
-    </div>
-  </section>
+    </article>
 
 
-  <!-- RECEIPTS ROOM -->
+    <article class="phase-card" id="receipts">
+      <div class="phase-badge">Phase 2</div>
 
-  <section class="section dark-red">
-    <div class="section-number">05</div>
-
-    <div class="inner reveal">
-      <div class="label">The Experience</div>
-
-      <h2>
-        Then I built
-        <span class="red">a room.</span>
-      </h2>
-
-      <p class="lead">
-        Because apparently a normal FAQ page wasn't ambitious enough.
-      </p>
-
-      <p class="copy">
-        The Receipts Room became part help desk, part digital experience,
-        part resource center and part world-building. Distinct personalities
-        can welcome visitors, answer questions, guide people through the site
-        and connect them with the right resources.
-      </p>
-    </div>
-  </section>
-
-
-  <!-- COMMUNITY -->
-
-  <section class="section">
-    <div class="section-number">06</div>
-
-    <div class="inner reveal">
-      <div class="label">Community</div>
-
-      <h2>
-        Then came the
-        <span class="red">Red Flag Society.</span>
-      </h2>
-
-      <p class="lead">
-        Because this was never supposed to be just another online store.
-      </p>
-
-      <div class="tag-grid">
-        <div class="tag">Wednesday Coffee</div>
-        <div class="tag">Events</div>
-        <div class="tag">Meetups</div>
-        <div class="tag">Groups</div>
-        <div class="tag">Community</div>
-        <div class="tag">Member Experiences</div>
-        <div class="tag">Offline Connection</div>
-        <div class="tag">The Society</div>
+      <div class="phase-image">
+        ◈
       </div>
-    </div>
-  </section>
 
+      <div class="phase-body">
+        <div class="phase-title">
+          The Receipts Room
+        </div>
 
-  <!-- SERVICES -->
+        <div class="phase-copy">
+          A smarter support experience.
+          Get clarity. Talk it through.
+          Find resources without judgment.
+        </div>
 
-  <section class="section dark-red">
-    <div class="section-number">07</div>
-
-    <div class="inner reveal">
-      <div class="label">Services</div>
-
-      <h2>
-        Then I built the
-        <span class="red">service side.</span>
-      </h2>
-
-      <div class="tag-grid">
-        <div class="tag">1:1 Sessions</div>
-        <div class="tag">Group Sessions</div>
-        <div class="tag">Programs</div>
-        <div class="tag">Packages</div>
-        <div class="tag">Resources</div>
-        <div class="tag">Customer Pathways</div>
-        <div class="tag">Community Support</div>
-        <div class="tag">Education</div>
+        <div class="phase-status">
+          Coming Soon
+        </div>
       </div>
-    </div>
-  </section>
+    </article>
 
 
-  <!-- FOUNDATION -->
+    <article class="phase-card" id="journal">
+      <div class="phase-badge">Phase 3</div>
 
-  <section class="section">
-    <div class="section-number">08</div>
-
-    <div class="inner reveal">
-      <div class="label">The Bigger Picture</div>
-
-      <h2>
-        And there is a
-        <span class="red">Foundation.</span>
-      </h2>
-
-      <p class="lead">
-        Because if the business grows, I want some of that growth to actually
-        mean something.
-      </p>
-
-      <p class="copy">
-        Giving back isn't being added later because it looks good.
-        It is being considered as part of the architecture from the beginning.
-      </p>
-    </div>
-  </section>
-
-
-  <!-- TECH -->
-
-  <section class="section dark-red">
-    <div class="section-number">09</div>
-
-    <div class="inner reveal">
-      <div class="label">Technology</div>
-
-      <h2>
-        Oh yeah.
-        <span class="red">I built the website too.</span>
-      </h2>
-
-      <div class="tag-grid">
-        <div class="tag">HTML</div>
-        <div class="tag">CSS</div>
-        <div class="tag">Responsive Design</div>
-        <div class="tag">Navigation</div>
-        <div class="tag">Landing Pages</div>
-        <div class="tag">Forms</div>
-        <div class="tag">Countdowns</div>
-        <div class="tag">Page Speed</div>
-        <div class="tag">Image Compression</div>
-        <div class="tag">Mobile Optimization</div>
-        <div class="tag">Integrations</div>
-        <div class="tag">Calls To Action</div>
+      <div class="phase-image">
+        ✎
       </div>
-    </div>
-  </section>
 
+      <div class="phase-body">
+        <div class="phase-title">
+          The Journal
+        </div>
 
-  <!-- QUOTE -->
+        <div class="phase-copy">
+          Write it out. Process it.
+          Document the moments, the realizations,
+          the receipts and the comeback.
+        </div>
 
-  <section class="quote-section reveal">
-    <blockquote>
-      This isn't a website.
-      <br>
-      It's the beginning of a company.
-    </blockquote>
-  </section>
-
-
-  <!-- RESUME -->
-
-  <section class="section">
-    <div class="section-number">10</div>
-
-    <div class="inner reveal">
-      <div class="label">The Unofficial Résumé</div>
-
-      <h2>
-        One founder.
-        <span class="red">A ridiculous number of jobs.</span>
-      </h2>
-
-      <div class="resume-grid">
-        <div class="resume-item">Founder</div>
-        <div class="resume-item">Creative Director</div>
-        <div class="resume-item">Brand Strategist</div>
-        <div class="resume-item">E-Commerce Manager</div>
-        <div class="resume-item">Web Designer</div>
-        <div class="resume-item">Product Developer</div>
-        <div class="resume-item">Merchandiser</div>
-        <div class="resume-item">Copywriter</div>
-        <div class="resume-item">Author</div>
-        <div class="resume-item">Publisher</div>
-        <div class="resume-item">Digital Product Developer</div>
-        <div class="resume-item">Content Director</div>
-        <div class="resume-item">Community Builder</div>
-        <div class="resume-item">Program Designer</div>
-        <div class="resume-item">Marketing Director</div>
-        <div class="resume-item">Campaign Director</div>
-        <div class="resume-item">Social Media Manager</div>
-        <div class="resume-item">Customer Experience Designer</div>
-        <div class="resume-item">Tech Support</div>
-        <div class="resume-item">Quality Control</div>
-        <div class="resume-item">Professional Button Mover</div>
-        <div class="resume-item">Chief Why-Isn't-This-Working Officer</div>
+        <div class="phase-status">
+          Coming Soon
+        </div>
       </div>
-    </div>
-  </section>
+    </article>
 
 
-  <!-- COUNTDOWN EXPLANATION -->
+    <article class="phase-card" id="society">
+      <div class="phase-badge">Phase 4</div>
 
-  <section class="section dark-red">
-    <div class="section-number">11</div>
+      <div class="phase-image">
+        ♛
+      </div>
 
-    <div class="inner reveal">
-      <div class="label">About That Countdown</div>
+      <div class="phase-body">
+        <div class="phase-title">
+          Red Flag Society
+        </div>
 
-      <h2>
-        Why isn't there another
-        <span class="red">clock?</span>
-      </h2>
+        <div class="phase-copy">
+          Community. Events. Conversation.
+          A place to connect with people who understand
+          the assignment.
+        </div>
 
-      <p class="lead">
-        Because I'm not putting another arbitrary timer on something I've
-        worked this hard to build.
-      </p>
+        <div class="phase-status">
+          Coming Soon
+        </div>
+      </div>
+    </article>
 
-      <p class="copy">
-        It launches when it's right.
-        Not perfect. Not finished forever. But right.
-        Red Flags & Receipts is being built to become something much bigger
-        than a single drop.
-      </p>
-    </div>
-  </section>
-
-
-  <!-- FINAL -->
-
-  <section class="final">
-    <div class="final-inner reveal">
-      <div class="label">Red Flags & Receipts</div>
-
-      <h2>
-        I built the
-        <span class="red">damn thing.</span>
-      </h2>
-
-      <p class="final-copy">
-        The doors are opening soon.
-        Leave your email and you'll be one of the first to know when they do.
-      </p>
-
-      <form class="email-form" id="notifyForm">
-        <input
-          id="email"
-          type="email"
-          placeholder="YOUR EMAIL"
-          required
-        />
-
-        <button type="submit">
-          Notify Me
-        </button>
-      </form>
-
-      <div id="formMessage"></div>
-    </div>
-  </section>
+  </div>
+</section>
 
 
-  <footer>
-    Red Flags & Receipts © 2026
-  </footer>
+<section class="values">
+
+  <div class="value">
+    <span>⚑</span>
+    Truth Over Convenience
+  </div>
+
+  <div class="value">
+    <span>♡</span>
+    Support Over Silence
+  </div>
+
+  <div class="value">
+    <span>◇</span>
+    Boundaries Over Bullsh*t
+  </div>
+
+  <div class="value">
+    <span>♛</span>
+    Glow Up Over Giving Up
+  </div>
+
+</section>
 
 
-  <script>
-    // Scroll reveal animation
-    const reveals = document.querySelectorAll(".reveal");
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      {
-        threshold: 0.12
-      }
-    );
-
-    reveals.forEach(item => observer.observe(item));
+<div class="footer-quote">
+  “We don’t just call out red flags. We collect the receipts and keep it moving.”
+</div>
 
 
-    // Temporary email form behavior
-    // Replace this with Wix / Mailchimp / Klaviyo / ConvertKit integration later.
+<script>
 
-    const form = document.getElementById("notifyForm");
-    const email = document.getElementById("email");
-    const message = document.getElementById("formMessage");
+  /*
+    ======================================================
+    RFR LAUNCH COUNTDOWN
+    September 10, 2026 — 8:27 PM Pacific
+    ======================================================
+  */
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
+  const launchDate =
+    new Date("September 10, 2026 20:27:00 GMT-0700").getTime();
 
-      if (!email.value) {
-        message.textContent = "Enter your email first.";
-        return;
-      }
+  function updateCountdown(){
 
-      message.textContent =
-        "You're on the list. We'll let you know when the doors open.";
+    const now = new Date().getTime();
 
-      form.reset();
-    });
-  </script>
+    let distance = launchDate - now;
+
+    if(distance <= 0){
+
+      document.getElementById("days").textContent = "00";
+      document.getElementById("hours").textContent = "00";
+      document.getElementById("minutes").textContent = "00";
+      document.getElementById("seconds").textContent = "00";
+
+      return;
+    }
+
+    const days =
+      Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours =
+      Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+      );
+
+    const minutes =
+      Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+      );
+
+    const seconds =
+      Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+      );
+
+
+    document.getElementById("days").textContent =
+      String(days).padStart(2,"0");
+
+    document.getElementById("hours").textContent =
+      String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").textContent =
+      String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").textContent =
+      String(seconds).padStart(2,"0");
+  }
+
+  updateCountdown();
+
+  setInterval(updateCountdown,1000);
+
+
+
+  /*
+    ======================================================
+    EMAIL FORM
+    ======================================================
+
+    This currently displays the success state.
+
+    Once placed inside Wix, hook this form to your
+    Wix Contacts / Wix Forms backend.
+  */
+
+  const form =
+    document.getElementById("alertForm");
+
+  const success =
+    document.getElementById("successMessage");
+
+  form.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const email =
+      document.getElementById("email").value;
+
+    if(!email){
+      return;
+    }
+
+    success.style.display = "block";
+
+    form.reset();
+
+  });
+
+</script>
 
 </body>
 </html>
