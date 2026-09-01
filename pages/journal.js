@@ -1,0 +1,752 @@
+export default function Journal() {
+  return (
+    <div dangerouslySetInnerHTML={{ __html: `
+      <!-- paste your journal.html content here -->
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RFR Journal Teaser</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap');
+
+    :root{
+      --cream:#f5efe6;
+      --paper:#fffaf3;
+      --ink:#171313;
+      --red:#b7191f;
+      --deep-red:#7f1015;
+      --gold:#b98a35;
+      --soft-gold:#d8b66c;
+      --muted:#6f6862;
+      --line:rgba(185,138,53,.45);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      background:var(--cream);
+      color:var(--ink);
+      font-family:"DM Sans",Arial,sans-serif;
+    }
+
+    .journal-teaser{
+      width:100%;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 80% 5%, rgba(185,138,53,.08), transparent 24%),
+        linear-gradient(180deg,#faf6f0 0%,#f3ebdf 100%);
+    }
+
+    .wrap{
+      width:min(1180px,92%);
+      margin:auto;
+    }
+
+    /* TOP LINE */
+
+    .eyebrow{
+      font-size:12px;
+      letter-spacing:4px;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:600;
+    }
+
+    /* HERO */
+
+    .journal-hero{
+      padding:70px 0 58px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.15fr;
+      gap:55px;
+      align-items:center;
+    }
+
+    .hero-copy h1{
+      font-family:"Italiana","Cormorant Garamond",serif;
+      font-weight:400;
+      font-size:clamp(56px,7vw,102px);
+      line-height:.9;
+      margin:18px 0 14px;
+      text-transform:uppercase;
+      letter-spacing:-2px;
+    }
+
+    .hero-copy h1 .red{
+      color:var(--red);
+    }
+
+    .handline{
+      font-family:"Cormorant Garamond",serif;
+      font-style:italic;
+      font-size:34px;
+      color:var(--ink);
+      margin:15px 0 24px;
+      transform:rotate(-2deg);
+    }
+
+    .hero-copy p{
+      max-width:520px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:20px;
+      line-height:1.55;
+      color:#443d38;
+    }
+
+    .hero-copy .red-copy{
+      color:var(--red);
+      font-weight:600;
+    }
+
+    /* JOURNAL VISUAL */
+
+    .visual-wrap{
+      position:relative;
+      min-height:590px;
+    }
+
+    .desk{
+      position:absolute;
+      inset:0;
+      border-radius:8px;
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.65),rgba(227,215,199,.45)),
+        #e5d7c5;
+      box-shadow:0 28px 70px rgba(70,40,20,.18);
+    }
+
+    .journal-book{
+      position:absolute;
+      width:62%;
+      height:72%;
+      left:15%;
+      top:7%;
+      background:
+        linear-gradient(135deg,#1a1a1a,#0e0e0e 70%);
+      border-radius:8px 14px 14px 8px;
+      box-shadow:0 25px 45px rgba(0,0,0,.28);
+      transform:rotate(-5deg);
+      padding:48px 35px;
+      border-right:5px solid #9f1219;
+    }
+
+    .journal-book:after{
+      content:"";
+      position:absolute;
+      top:0;
+      right:22px;
+      width:4px;
+      height:100%;
+      background:#b7191f;
+    }
+
+    .book-title{
+      text-align:center;
+      font-family:"Cormorant Garamond",serif;
+      color:var(--soft-gold);
+      font-size:31px;
+      line-height:1.05;
+      letter-spacing:2px;
+      margin-top:80px;
+    }
+
+    .book-sub{
+      text-align:center;
+      margin-top:14px;
+      color:#d7b260;
+      font-size:11px;
+      letter-spacing:4px;
+      text-transform:uppercase;
+    }
+
+    .red-pen{
+      position:absolute;
+      width:8px;
+      height:210px;
+      right:11%;
+      top:4%;
+      background:linear-gradient(#7f1015,#c8272f);
+      border-radius:10px;
+      transform:rotate(10deg);
+      box-shadow:0 6px 10px rgba(0,0,0,.15);
+    }
+
+    .coffee{
+      position:absolute;
+      right:0;
+      top:21%;
+      width:125px;
+      height:125px;
+      background:#faf6ef;
+      border:1px solid var(--gold);
+      border-radius:50%;
+      box-shadow:0 15px 30px rgba(0,0,0,.08);
+    }
+
+    .coffee:before{
+      content:"";
+      position:absolute;
+      inset:20px;
+      border-radius:50%;
+      background:#26150f;
+    }
+
+    .polaroid{
+      position:absolute;
+      right:5%;
+      bottom:7%;
+      width:190px;
+      background:#fff;
+      padding:10px 10px 28px;
+      transform:rotate(8deg);
+      box-shadow:0 15px 25px rgba(0,0,0,.18);
+    }
+
+    .polaroid-img{
+      height:175px;
+      background:
+        linear-gradient(180deg,#5b6268,#222);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .polaroid-img:after{
+      content:"";
+      position:absolute;
+      width:70px;
+      height:120px;
+      background:#191919;
+      border-radius:40px 40px 20px 20px;
+      left:58px;
+      bottom:-20px;
+      opacity:.75;
+    }
+
+    .polaroid-caption{
+      font-family:"Cormorant Garamond",serif;
+      font-style:italic;
+      text-align:center;
+      font-size:22px;
+      margin-top:12px;
+    }
+
+    .receipt{
+      position:absolute;
+      width:105px;
+      background:#f5f0e6;
+      left:4%;
+      bottom:4%;
+      padding:14px 10px;
+      font-family:monospace;
+      font-size:8px;
+      line-height:1.5;
+      color:#4b4540;
+      transform:rotate(-8deg);
+      box-shadow:0 12px 22px rgba(0,0,0,.15);
+    }
+
+    /* RECEIPTS LINE */
+
+    .receipts-band{
+      text-align:center;
+      padding:24px 15px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      font-family:"Cormorant Garamond",serif;
+      font-size:34px;
+      text-transform:uppercase;
+      letter-spacing:5px;
+      background:rgba(255,255,255,.45);
+    }
+
+    .receipts-band span{
+      color:var(--red);
+    }
+
+    /* PREVIEWS */
+
+    .preview-section{
+      padding:45px 0 28px;
+    }
+
+    .preview-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+
+    .preview{
+      background:#efe3d4;
+      border:1px solid var(--line);
+      min-height:280px;
+      padding:28px 22px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .preview:before{
+      content:"";
+      position:absolute;
+      top:0;
+      bottom:0;
+      left:38px;
+      width:1px;
+      background:rgba(185,138,53,.22);
+    }
+
+    .preview small{
+      color:#6d645d;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    .preview h3{
+      font-family:"Cormorant Garamond",serif;
+      font-size:32px;
+      font-style:italic;
+      font-weight:500;
+      line-height:1.08;
+      margin:35px 0 8px 20px;
+    }
+
+    .preview p{
+      font-family:"Cormorant Garamond",serif;
+      margin-left:20px;
+      font-size:18px;
+      line-height:1.35;
+    }
+
+    .preview strong{
+      color:var(--red);
+    }
+
+    /* BOTTOM */
+
+    .bottom-grid{
+      display:grid;
+      grid-template-columns:.9fr 1fr 1fr;
+      gap:35px;
+      padding:48px 0 55px;
+      align-items:center;
+    }
+
+    .pocket{
+      background:#141414;
+      color:white;
+      min-height:340px;
+      border-radius:5px;
+      border-right:5px solid var(--red);
+      padding:28px;
+      box-shadow:0 16px 35px rgba(0,0,0,.18);
+    }
+
+    .pocket-card{
+      margin-top:120px;
+      color:var(--soft-gold);
+      font-family:"Cormorant Garamond",serif;
+      font-style:italic;
+      font-size:25px;
+      line-height:1.35;
+    }
+
+    .detail-box h2,
+    .signup h2{
+      font-family:"Cormorant Garamond",serif;
+      font-size:27px;
+      color:var(--gold);
+      letter-spacing:1px;
+    }
+
+    .detail{
+      display:flex;
+      gap:14px;
+      margin:17px 0;
+      align-items:flex-start;
+    }
+
+    .detail-icon{
+      color:var(--gold);
+      font-size:20px;
+      min-width:25px;
+    }
+
+    .detail-text{
+      font-size:13px;
+      line-height:1.4;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .signup p{
+      font-family:"Cormorant Garamond",serif;
+      font-size:18px;
+      line-height:1.45;
+    }
+
+    .email-form{
+      margin-top:20px;
+    }
+
+    .email-form input{
+      width:100%;
+      padding:16px 15px;
+      border:1px solid var(--gold);
+      background:transparent;
+      outline:none;
+      font-size:13px;
+      letter-spacing:1px;
+    }
+
+    .email-form button{
+      width:100%;
+      margin-top:10px;
+      padding:15px;
+      border:0;
+      background:var(--red);
+      color:white;
+      cursor:pointer;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-weight:600;
+    }
+
+    .signup-note{
+      font-size:11px !important;
+      color:#8a8178;
+      text-align:center;
+      margin-top:8px;
+    }
+
+    .script{
+      font-family:"Cormorant Garamond",serif;
+      font-size:27px !important;
+      color:var(--gold);
+      font-style:italic;
+      margin-top:25px;
+    }
+
+    .footer-values{
+      border-top:1px solid var(--line);
+      padding:24px 0;
+      display:flex;
+      justify-content:center;
+      gap:45px;
+      flex-wrap:wrap;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      color:#554c46;
+      font-size:11px;
+    }
+
+    .footer-values b{
+      color:var(--red);
+    }
+
+    @media(max-width:900px){
+      .hero-grid,
+      .bottom-grid{
+        grid-template-columns:1fr;
+      }
+
+      .preview-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .visual-wrap{
+        min-height:500px;
+      }
+    }
+
+    @media(max-width:580px){
+      .journal-hero{
+        padding-top:42px;
+      }
+
+      .preview-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-copy h1{
+        font-size:58px;
+      }
+
+      .handline{
+        font-size:27px;
+      }
+
+      .visual-wrap{
+        min-height:430px;
+      }
+
+      .journal-book{
+        width:70%;
+        height:65%;
+        left:7%;
+      }
+
+      .coffee{
+        width:90px;
+        height:90px;
+      }
+
+      .polaroid{
+        width:140px;
+      }
+
+      .polaroid-img{
+        height:125px;
+      }
+
+      .receipts-band{
+        font-size:24px;
+        letter-spacing:3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="journal-teaser">
+
+  <div class="journal-hero">
+    <div class="wrap hero-grid">
+
+      <div class="hero-copy">
+        <div class="eyebrow">The Questions I Ask Myself</div>
+
+        <h1>
+          The Story<br>
+          That Was<br>
+          <span class="red">Always<br>Supposed</span><br>
+          To Not<br>
+          Be Told.
+        </h1>
+
+        <div class="handline">
+          I wrote it down anyway.
+        </div>
+
+        <p>
+          The truth they never wanted you to see.<br>
+          The things they tried to silence.<br>
+          The moments that changed everything.
+        </p>
+
+        <p class="red-copy">
+          This is where I write it down.<br>
+          So I never forget it again.
+        </p>
+      </div>
+
+
+      <div class="visual-wrap">
+        <div class="desk"></div>
+
+        <div class="journal-book">
+          <div class="book-title">
+            RED FLAGS<br>&<br>RECEIPTS
+          </div>
+          <div class="book-sub">
+            The Journal
+          </div>
+        </div>
+
+        <div class="red-pen"></div>
+
+        <div class="coffee"></div>
+
+        <div class="receipt">
+          JACK IN THE BOX<br><br>
+          DATE: 08/21/26<br>
+          TIME: 11:47 AM<br><br>
+          RECEIPT<br>
+          ----------------<br>
+          ORDER<br>
+          MOMENT<br>
+          BEGINNING<br><br>
+          TOTAL: TRUTH
+        </div>
+
+        <div class="polaroid">
+          <div class="polaroid-img"></div>
+          <div class="polaroid-caption">
+            I choose me.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="receipts-band">
+    Receipts Are <span>Coming.</span>
+  </div>
+
+
+  <section class="preview-section">
+    <div class="wrap preview-grid">
+
+      <div class="preview">
+        <small>Day 01</small>
+        <h3>I choose <strong>me.</strong></h3>
+        <p>
+          The day I finally moved even while my heart resisted.
+        </p>
+      </div>
+
+      <div class="preview">
+        <small>The Hard Truths</small>
+        <h3>What I finally admitted to myself.</h3>
+        <p>
+          The things I knew before I was ready to say them out loud.
+        </p>
+      </div>
+
+      <div class="preview">
+        <small>Boundary Check</small>
+        <h3>What I will <strong>not</strong> accept anymore.</h3>
+        <p>
+          What used to be negotiable isn't anymore.
+        </p>
+      </div>
+
+      <div class="preview">
+        <small>The Glow Up Plan</small>
+        <h3>The life I'm building <strong>now.</strong></h3>
+        <p>
+          The next chapter gets written on my terms.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <div class="wrap bottom-grid">
+
+    <div class="pocket">
+      <div class="pocket-card">
+        Collect it.<br>
+        Reflect on it.<br>
+        Learn from it.<br>
+        Keep moving.
+      </div>
+    </div>
+
+
+    <div class="detail-box">
+      <h2>The Journal Is a Witness.</h2>
+
+      <div class="detail">
+        <div class="detail-icon">✦</div>
+        <div class="detail-text">
+          Real entries<br>
+          written as life happens
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="detail-icon">✎</div>
+        <div class="detail-text">
+          Truth, patterns,<br>
+          receipts and reflection
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="detail-icon">?</div>
+        <div class="detail-text">
+          One honest question<br>
+          at the end of every entry
+        </div>
+      </div>
+
+      <div class="detail">
+        <div class="detail-icon">⚑</div>
+        <div class="detail-text">
+          No rewriting history.<br>
+          Keep the evidence.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="signup">
+      <h2>Be the First to Read It.</h2>
+
+      <p>
+        Get notified when a new entry, new receipt,
+        or new phase of RFR goes live.
+      </p>
+
+      <form class="email-form" id="journalEmailForm">
+        <input
+          type="email"
+          id="journalEmail"
+          placeholder="ENTER YOUR EMAIL"
+          required
+        >
+        <button type="submit">
+          Notify Me
+        </button>
+      </form>
+
+      <p class="signup-note">
+        No spam. Just the next chapter.
+      </p>
+
+      <p class="script">
+        The story may not have been supposed to be told.<br>
+        It's being told anyway.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="footer-values">
+    <span>Truth Over <b>Convenience</b></span>
+    <span>Boundaries Over <b>Bullsh*t</b></span>
+    <span>Glow Up Over <b>Giving Up</b></span>
+  </div>
+
+</section>
+
+
+<script>
+  const journalForm = document.getElementById("journalEmailForm");
+
+  journalForm.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const email = document.getElementById("journalEmail").value;
+
+    if(email){
+      alert("You're on the RFR list.");
+      journalForm.reset();
+    }
+  });
+</script>
+
+</body>
+</html>
+      
+    `}} />
+  );
+}
