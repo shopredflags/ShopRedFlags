@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Events | Red Flags Foundation</title>
+  <meta name="description" content="Explore upcoming Red Flags Foundation events and opportunities to turn awareness into action.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://shopredflags.com/foundation/events">
+  <meta property="og:title" content="Events | Red Flags Foundation">
+  <meta property="og:description" content="Show up. Speak up. Turn awareness into action with Red Flags Foundation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shopredflags.com/foundation/events">
+  <style>
+    :root{--black:#080808;--ink:#12100f;--red:#9b0d1b;--red2:#d11b2d;--gold:#caa45f;--cream:#f4ede2;--paper:#fffaf2;--muted:#766e64;--line:rgba(18,16,15,.16)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}a{color:inherit}button,input{font:inherit}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .eyebrow{margin:0 0 15px;font-size:.7rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase}.red{color:var(--red)}.gold{color:var(--gold)}
+    .hero{min-height:720px;background:radial-gradient(circle at 80% 42%,rgba(155,13,27,.42),transparent 32%),linear-gradient(105deg,rgba(0,0,0,.98) 0%,rgba(0,0,0,.93) 46%,rgba(20,0,3,.82) 100%);color:#fff;display:flex;align-items:center;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 85px,rgba(255,255,255,.018) 86px 87px)}.hero:after{content:"RF";position:absolute;right:-30px;bottom:-135px;color:transparent;-webkit-text-stroke:1px rgba(202,164,95,.15);font:700 31rem/1 Georgia,serif;letter-spacing:-.12em}.hero-content{position:relative;z-index:2;padding:155px 0 90px}.hero h1{max-width:920px;margin:0;font:700 clamp(4.4rem,10vw,9rem)/.82 Georgia,"Times New Roman",serif;letter-spacing:-.065em;text-transform:uppercase}.hero h1 em{display:block;color:var(--red2);font-weight:400}.hero-copy{display:grid;grid-template-columns:4px minmax(0,620px);gap:24px;margin-top:40px;align-items:stretch}.hero-copy:before{content:"";background:var(--gold)}.hero-copy p{margin:0;font:400 clamp(1.05rem,2vw,1.35rem)/1.62 Georgia,serif;color:#ded5c8}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin:34px 0 0 28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 25px;text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:800;border:1px solid var(--gold);transition:.2s}.btn-primary{background:var(--red);border-color:var(--red);color:#fff}.btn-secondary{color:var(--gold)}.btn:hover{transform:translateY(-2px);background:var(--gold);border-color:var(--gold);color:var(--black)}
+    .hero-content{padding-top:90px}
+    .manifesto{background:var(--red);color:#fff}.manifesto .wrap{display:grid;grid-template-columns:repeat(3,1fr)}.manifesto-item{min-height:138px;padding:31px 35px;border-right:1px solid rgba(255,255,255,.28);display:flex;flex-direction:column;justify-content:center}.manifesto-item:first-child{border-left:1px solid rgba(255,255,255,.28)}.manifesto strong{font:700 1.45rem Georgia,serif;text-transform:uppercase}.manifesto span{margin-top:5px;color:#f4d9dc;font-size:.87rem}
+    .events{padding:105px 0}.section-head{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end;margin-bottom:50px}.section-head h2{margin:0;font:700 clamp(3rem,6vw,5.8rem)/.88 Georgia,serif;letter-spacing:-.05em;text-transform:uppercase}.section-head p{margin:0 0 5px;color:var(--muted);max-width:500px}
+    .featured{border:1px solid var(--line);background:var(--paper);display:grid;grid-template-columns:.72fr 1.28fr;min-height:420px;box-shadow:0 24px 60px rgba(31,18,12,.08);margin-bottom:30px}.featured-art{background:var(--black);color:#fff;padding:48px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.featured-art:after{content:"W";position:absolute;right:-35px;bottom:-90px;color:transparent;-webkit-text-stroke:1px rgba(202,164,95,.22);font:700 18rem Georgia,serif}.featured-art .status{color:var(--gold);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase}.featured-art .mark{font:italic 3.2rem/1 Georgia,serif;color:var(--red2);position:relative;z-index:1}.featured-info{padding:48px 55px;display:flex;flex-direction:column;justify-content:center}.featured-info h3{font:700 clamp(2.2rem,5vw,4.4rem)/.95 Georgia,serif;letter-spacing:-.04em;margin:0 0 15px}.featured-info p{color:var(--muted);margin:0 0 22px}.meta{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:24px;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.meta span{border-left:2px solid var(--red);padding-left:10px}.dates{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}.dates span{background:#fff;border:1px solid var(--line);padding:9px 12px;font-size:.72rem;font-weight:800}.event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.event-card{background:var(--paper);border:1px solid var(--line);padding:0;display:grid;grid-template-columns:120px 1fr;min-height:230px;transition:.2s}.event-card:hover{transform:translateY(-4px);box-shadow:0 18px 35px rgba(31,18,12,.09)}.event-card .cal{background:var(--red);color:#fff;padding:25px 15px;text-align:center;display:flex;flex-direction:column;justify-content:center}.cal .month{font-size:.67rem;letter-spacing:.18em;text-transform:uppercase}.cal strong{font:700 3.5rem/1 Georgia,serif;margin:5px 0}.cal .day{font-size:.67rem;letter-spacing:.13em;text-transform:uppercase}.card-copy{padding:25px 24px;display:flex;flex-direction:column}.card-copy .type{color:var(--red);font-size:.64rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.card-copy h3{font:700 1.5rem/1.05 Georgia,serif;margin:8px 0 10px}.card-copy p{font-size:.85rem;color:var(--muted);margin:0 0 18px}.card-copy a,.featured-info a{margin-top:auto;align-self:flex-start;color:var(--red);font-size:.67rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}.updates{margin-top:45px;padding:34px;background:var(--black);color:#fff;display:grid;grid-template-columns:.75fr 1.25fr;gap:35px;align-items:center}.updates h3{font:700 1.7rem Georgia,serif;margin:0 0 5px}.updates p{margin:0;color:#aaa198;font-size:.85rem}.notify{display:grid;grid-template-columns:1fr auto}.notify label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.notify input{border:1px solid #403c37;background:#fff;padding:15px 17px;min-width:0;outline:none}.notify button{border:0;background:var(--red);color:#fff;padding:0 23px;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+    .purpose{background:var(--black);color:#fff;padding:100px 0}.purpose-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;align-items:start}.purpose h2{font:700 clamp(3rem,6vw,5.6rem)/.9 Georgia,serif;letter-spacing:-.05em;text-transform:uppercase;margin:0}.purpose-copy{display:grid;gap:0;border-top:1px solid rgba(255,255,255,.22)}.purpose-row{display:grid;grid-template-columns:70px 1fr;gap:25px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.22)}.number{color:var(--gold);font:italic 1.4rem Georgia,serif}.purpose-row h3{margin:0 0 7px;font:700 1.35rem Georgia,serif;text-transform:uppercase}.purpose-row p{margin:0;color:#aaa198}
+    .cta{padding:105px 0;background:linear-gradient(135deg,#f7f0e6,#eadfce);text-align:center}.cta h2{font:700 clamp(3rem,7vw,6.5rem)/.86 Georgia,serif;letter-spacing:-.055em;text-transform:uppercase;margin:0 auto 26px;max-width:930px}.cta h2 em{color:var(--red);font-weight:400}.cta p{max-width:650px;margin:0 auto 32px;color:var(--muted);font-size:1.05rem}.cta-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}.cta .btn-secondary{color:var(--ink);border-color:var(--ink)}
+    @media(max-width:900px){.hero{min-height:680px}.hero:after{font-size:20rem}.manifesto .wrap{grid-template-columns:1fr}.manifesto-item,.manifesto-item:first-child{border-left:1px solid rgba(255,255,255,.28);border-bottom:1px solid rgba(255,255,255,.28);min-height:110px}.section-head,.purpose-grid{grid-template-columns:1fr;gap:30px}.featured{grid-template-columns:1fr}.featured-art{min-height:240px}.event-grid{grid-template-columns:1fr}.purpose-grid{gap:55px}.updates{grid-template-columns:1fr}}
+    @media(max-width:580px){.wrap{width:min(100% - 26px,1180px)}.hero{min-height:620px}.hero-content{padding:70px 0}.hero h1{font-size:3.8rem}.hero-copy{gap:15px}.hero-actions{margin-left:19px}.events,.purpose,.cta{padding:72px 0}.featured-art,.featured-info{padding:35px 28px}.event-card{grid-template-columns:90px 1fr}.cal strong{font-size:2.8rem}.updates{padding:28px 22px}.notify{grid-template-columns:1fr}.notify button{min-height:50px}.purpose-row{grid-template-columns:44px 1fr}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-content">
+        <p class="eyebrow gold">Red Flags Foundation presents</p>
+        <h1>Show Up.<em>Speak Up.</em></h1>
+        <div class="hero-copy"><p>Awareness is where change begins. Action is what makes it matter. Our events bring people together to learn, connect, and move the conversation forward.</p></div>
+        <div class="hero-actions"><a class="btn btn-primary" href="#events">View Events</a><a class="btn btn-secondary" href="#updates">Get Event Updates</a></div>
+      </div>
+    </section>
+
+    <section class="manifesto" aria-label="Foundation event values">
+      <div class="wrap">
+        <div class="manifesto-item"><strong>Recognize it.</strong><span>Awareness changes what we tolerate.</span></div>
+        <div class="manifesto-item"><strong>Talk about it.</strong><span>Silence protects the wrong people.</span></div>
+        <div class="manifesto-item"><strong>Do something.</strong><span>Real change requires action.</span></div>
+      </div>
+    </section>
+
+    <section class="events" id="events">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow red">On the calendar</p><h2>Upcoming<br>Events</h2></div>
+          <p>From weekly coffee to focused workshops and community action, these are places to connect, learn, and leave stronger than you arrived.</p>
+        </div>
+        <article class="featured">
+          <div class="featured-art"><span class="status">Every Wednesday · 5 PM</span><span class="mark">Wednesday<br>Coffee.</span></div>
+          <div class="featured-info">
+            <p class="eyebrow red">Weekly Community Gathering</p>
+            <h3>Come as you are.</h3>
+            <div class="meta"><span>5:00 PM</span><span>Junipero Bluff · Long Beach</span><span>Free</span></div>
+            <p>Meet people who get it. No performance, no pressure—just coffee, conversation, and community. Look for Amy in the Red Flags shirt.</p>
+            <div class="dates" aria-label="Upcoming Wednesday Coffee dates"><span>SEP 23</span><span>SEP 30</span><span>OCT 07</span><span>OCT 14</span><span>OCT 21</span></div>
+            <a href="/contact">I’m Coming →</a>
+          </div>
+        </article>
+
+        <div class="event-grid">
+          <article class="event-card">
+            <div class="cal"><span class="month">October</span><strong>10</strong><span class="day">Saturday</span></div>
+            <div class="card-copy"><span class="type">Workshop</span><h3>The Red Flag Reset</h3><p>A direct, practical workshop on recognizing patterns, rebuilding boundaries, and choosing your next move.</p><a href="/contact">Save My Spot →</a></div>
+          </article>
+          <article class="event-card">
+            <div class="cal"><span class="month">October</span><strong>24</strong><span class="day">Saturday</span></div>
+            <div class="card-copy"><span class="type">Community Conversation</span><h3>Receipts &amp; Reality</h3><p>An honest conversation about what happened, what it cost, and what changes when you finally trust yourself.</p><a href="/contact">Join the Conversation →</a></div>
+          </article>
+          <article class="event-card">
+            <div class="cal"><span class="month">November</span><strong>07</strong><span class="day">Saturday</span></div>
+            <div class="card-copy"><span class="type">Foundation Action Day</span><h3>Glow Up &amp; Give Back</h3><p>A community-powered day of connection, practical support, and action that turns awareness into something visible.</p><a href="/contact">Get Involved →</a></div>
+          </article>
+          <article class="event-card">
+            <div class="cal"><span class="month">November</span><strong>21</strong><span class="day">Saturday</span></div>
+            <div class="card-copy"><span class="type">Boundary Lab</span><h3>Holiday Boundary Bootcamp</h3><p>Scripts, strategies, and real-world practice for protecting your peace before the holidays test it.</p><a href="/contact">Reserve a Seat →</a></div>
+          </article>
+        </div>
+
+        <div class="updates" id="updates">
+          <div><h3>Don’t miss what’s next.</h3><p>Dates, details, and event announcements—straight to your inbox.</p></div>
+          <!-- Connect this form to Wix Forms, your email platform, or replace # with your form endpoint. -->
+          <form class="notify" action="#" method="post">
+            <label for="event-email">Email address</label>
+            <input id="event-email" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+            <button type="submit">Keep Me Posted →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="purpose">
+      <div class="wrap purpose-grid">
+        <div><p class="eyebrow gold">Why we gather</p><h2>More Than<br>An Event.</h2></div>
+        <div class="purpose-copy">
+          <article class="purpose-row"><span class="number">01</span><div><h3>Real Conversation</h3><p>Clear language, honest experiences, and room for the conversations people are usually told to keep quiet.</p></div></article>
+          <article class="purpose-row"><span class="number">02</span><div><h3>Real Connection</h3><p>A chance to be in the room with people who understand that recognition can change everything.</p></div></article>
+          <article class="purpose-row"><span class="number">03</span><div><h3>Real Momentum</h3><p>We leave with more than awareness. We leave ready to make the next right move.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <p class="eyebrow red">Red Flags Foundation</p>
+        <h2>Turn Awareness<br><em>Into Action.</em></h2>
+        <p>Want to attend, support, or connect with the Foundation? Start here. We’ll make sure your message reaches an actual human.</p>
+        <div class="cta-actions"><a class="btn btn-primary" href="/contact">Contact the Foundation</a><a class="btn btn-secondary" href="/foundation">Explore the Foundation</a></div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
