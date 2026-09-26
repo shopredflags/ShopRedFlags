@@ -1,170 +1,239 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Red Flags & Receipts</title>
-<style>
-:root{
-  --black:#050505;
-  --red:#b5121b;
-  --gold:#c9a454;
-  --white:#ffffff;
-  --muted:#d7cfc4;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  min-height:100vh;
-  background:
-    radial-gradient(circle at 50% 0%,rgba(201,164,84,.10),transparent 38%),
-    #050505;
-  color:var(--white);
-  font-family:Arial,Helvetica,sans-serif;
-}
-a{text-decoration:none;color:inherit}
-.page{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:48px 20px;
-}
-.wrap{
-  width:min(1120px,94%);
-  text-align:center;
-}
-.brand{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:.28em;
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:14px;
-}
-h1{
-  margin:0;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(42px,6vw,76px);
-  line-height:.95;
-}
-.intro{
-  margin:16px auto 34px;
-  color:#d8d0c5;
-  font-size:17px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-}
-.card{
-  min-height:260px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  text-align:left;
-  padding:28px;
-  border:1px solid rgba(201,164,84,.55);
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.00)),
-    #0d0d0d;
-  transition:.25s ease;
-}
-.card:hover{
-  transform:translateY(-5px);
-  border-color:var(--gold);
-  background:#121212;
-}
-.card .num{
-  color:var(--red);
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  font-weight:800;
-  margin-bottom:auto;
-}
-.card h2{
-  margin:0 0 8px;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:34px;
-  line-height:1;
-}
-.card p{
-  margin:0;
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.45;
-}
-.arrow{
-  margin-top:18px;
-  color:var(--gold);
-  font-size:20px;
-}
-.note{
-  margin-top:28px;
-  color:#777;
-  font-size:11px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Red Flags & Receipts — fashion, stories, community, and higher standards.">
+  <title>Red Flags & Receipts</title>
 
-@media(max-width:900px){
-  .grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:560px){
-  .page{padding:34px 16px}
-  .grid{grid-template-columns:1fr}
-  .card{min-height:190px}
-  .intro{font-size:15px}
-}
-</style>
+  <style>
+    :root {
+      --black: #050505;
+      --red: #b5121b;
+      --gold: #c9a454;
+      --white: #fff;
+      --muted: #d7cfc4;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(201,164,84,.10), transparent 38%),
+        var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+
+    .wrap {
+      width: min(1120px, 94%);
+      text-align: center;
+    }
+
+    .brand {
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .95;
+    }
+
+    .intro {
+      margin: 16px auto 34px;
+      color: #d8d0c5;
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      min-height: 300px;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding: 28px;
+      border: 1px solid rgba(201,164,84,.55);
+      background-color: #0d0d0d;
+      background-image:
+        linear-gradient(180deg, rgba(0,0,0,.05) 30%, rgba(0,0,0,.85)),
+        var(--card-image);
+      background-position: center;
+      background-size: cover;
+      text-align: left;
+      transition: transform .25s ease, border-color .25s ease, filter .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      filter: brightness(1.08);
+    }
+
+    .card:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .num {
+      margin-bottom: auto;
+      color: #f06a70;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .arrow {
+      margin-top: 18px;
+      color: var(--gold);
+      font-size: 20px;
+    }
+
+    /* The words REACH OUT are already part of this card's artwork. */
+    .card--reach {
+      background-image: var(--card-image);
+    }
+
+    .card--reach .num,
+    .card--reach h2,
+    .card--reach p,
+    .card--reach .arrow {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+
+    .note {
+      margin-top: 28px;
+      color: #999;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .page { padding: 34px 16px; }
+      .grid { grid-template-columns: 1fr; }
+      .card { min-height: 280px; }
+      .intro { font-size: 15px; }
+    }
+  </style>
 </head>
+
 <body>
+  <main class="page">
+    <div class="wrap">
+      <div class="brand">Red Flags &amp; Receipts</div>
+      <h1>WHERE WOULD YOU LIKE TO GO?</h1>
+      <p class="intro">Choose your next move.</p>
 
-<main class="page">
-  <div class="wrap">
+      <div class="grid">
+        <a class="card"
+           href="https://nicegirlinla.wixsite.com/red-flags/category/all-products"
+           style="--card-image:url('images/shop-card-art-v2.png')">
+          <div class="num">01</div>
+          <h2>Shop</h2>
+          <p>Wear the message</p>
+          <div class="arrow">→</div>
+        </a>
 
-    <div class="brand">Red Flags & Receipts</div>
-    <h1>WHERE WOULD YOU LIKE TO GO?</h1>
-    <p class="intro">Choose your next move.</p>
+        <a class="card"
+           href="https://nicegirlinla.wixsite.com/red-flags/receipts-room"
+           style="--card-image:url('images/receipts-card-art-v2.png')">
+          <div class="num">02</div>
+          <h2>Receipts</h2>
+          <p>Make sense of what happened</p>
+          <div class="arrow">→</div>
+        </a>
 
-    <div class="grid">
+        <a class="card"
+           href="https://nicegirlinla.wixsite.com/red-flags/community"
+           style="--card-image:url('images/community-card-art.png')">
+          <div class="num">03</div>
+          <h2>Community</h2>
+          <p>Find your people</p>
+          <div class="arrow">→</div>
+        </a>
 
-      <a class="card" href="LINK_SHOP_PAGE" target="_top">
-        <div class="num">01</div>
-        <h2>Shop</h2>
-        <p>Wear the message</p>
-        <div class="arrow">→</div>
-      </a>
+        <a class="card"
+           href="https://nicegirlinla.wixsite.com/red-flags"
+           style="--card-image:url('hero2.jpg')">
+          <div class="num">04</div>
+          <h2>Foundation</h2>
+          <p>Turn awareness into action</p>
+          <div class="arrow">→</div>
+        </a>
 
-      <a class="card" href="LINK_RECEIPTS_PAGE" target="_top">
-        <div class="num">02</div>
-        <h2>Receipts</h2>
-        <p>Make sense of what happened</p>
-        <div class="arrow">→</div>
-      </a>
+        <a class="card"
+           href="/journal/"
+           style="--card-image:url('images/journal-card-art.png')">
+          <div class="num">05</div>
+          <h2>Journal</h2>
+          <p>Read by mood</p>
+          <div class="arrow">→</div>
+        </a>
 
-      <a class="card" href="LINK_COMMUNITY_PAGE" target="_top">
-        <div class="num">03</div>
-        <h2>Community</h2>
-        <p>Find your people</p>
-        <div class="arrow">→</div>
-      </a>
+        <a class="card card--reach"
+           href="https://nicegirlinla.wixsite.com/red-flags/contact"
+           aria-label="Reach Out — get in touch with Amy"
+           style="--card-image:url('images/reach-out-card-art-v2.png')">
+          <div class="num">06</div>
+          <h2>Reach Out</h2>
+          <p>Get in touch with Amy</p>
+          <div class="arrow">→</div>
+        </a>
+      </div>
 
-      <a class="card" href="LINK_FOUNDATION_PAGE" target="_top">
-        <div class="num">04</div>
-        <h2>Foundation</h2>
-        <p>Turn awareness into action</p>
-        <div class="arrow">→</div>
-      </a>
-
+      <div class="note">Same Girl. Higher Standards.</div>
     </div>
-
-    <div class="note">Same Girl. Higher Standards.</div>
-
-  </div>
-</main>
-
+  </main>
 </body>
 </html>
